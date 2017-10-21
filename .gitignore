@@ -1,3 +1,6 @@
+updaters
+.DS_Store
+
 # Logs
 logs
 *.log
