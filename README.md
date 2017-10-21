@@ -1,3 +1,3 @@
 # Resume of Acker Dawn Apple
 
-[download pdf](https://ackerapple.github.io/resume/Acker Apple Resume.pdf)
+[tap here for pdf resume](https://ackerapple.github.io/resume/Acker%20Apple%20Resume.pdf)
