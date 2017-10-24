@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../components/templates/app.pug.ts"],"names":[],"mappings":";;AAAa,QAAA,MAAM,GAAG,yBAAyB,CAAA","file":"app.pug.js","sourceRoot":"","sourcesContent":["export const string = \"Hello World of Angular4\""]}
