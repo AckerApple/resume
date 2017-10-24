@@ -12,7 +12,14 @@ const styles_AppComponent:any[] = ([] as any[]);
 export const RenderType_AppComponent:i0.RendererType2 = i0.ɵcrt({encapsulation:2,styles:styles_AppComponent,
     data:{}});
 export function View_AppComponent_0(_l:any):i0.ɵViewDefinition {
-  return i0.ɵvid(0,[(_l()(),i0.ɵted(-1,(null as any),['Hello World of Angular4']))],
+  return i0.ɵvid(0,[(_l()(),i0.ɵeld(0,0,(null as any),(null as any),3,'div',[['class',
+      'flex-valign-center height-full flex-center']],(null as any),(null as any),(null as any),
+      (null as any),(null as any))),(_l()(),i0.ɵeld(1,0,(null as any),(null as any),
+      2,'div',[['class','pad text-4x']],(null as any),(null as any),(null as any),
+      (null as any),(null as any))),(_l()(),i0.ɵeld(2,0,(null as any),(null as any),
+      1,'a',[['class','no-a-style pad border-2 border-positive text-positive text-center hover-bg-positive hover-text-white'],
+          ['href','Acker Apple Resume.pdf']],(null as any),(null as any),(null as any),
+      (null as any),(null as any))),(_l()(),i0.ɵted(-1,(null as any),['download Acker Dawn Apple resume']))],
       (null as any),(null as any));
 }
 export function View_AppComponent_Host_0(_l:any):i0.ɵViewDefinition {
@@ -23,4 +30,4 @@ export function View_AppComponent_Host_0(_l:any):i0.ɵViewDefinition {
 }
 export const AppComponentNgFactory:i0.ComponentFactory<i1.AppComponent> = i0.ɵccf('app',
     i1.AppComponent,View_AppComponent_Host_0,{},{},([] as any[]));
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL1VzZXJzL0JlYXV0aXNvcy9wcm9qZWN0cy9BQ0svcmVzdW1lL2doLXBhZ2VzL3NyYy9jb21wb25lbnRzL2FwcC5jb21wb25lbnQubmdmYWN0b3J5LnRzIiwidmVyc2lvbiI6Mywic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsibmc6Ly8vVXNlcnMvQmVhdXRpc29zL3Byb2plY3RzL0FDSy9yZXN1bWUvZ2gtcGFnZXMvc3JjL2NvbXBvbmVudHMvYXBwLmNvbXBvbmVudC50cyIsIm5nOi8vL1VzZXJzL0JlYXV0aXNvcy9wcm9qZWN0cy9BQ0svcmVzdW1lL2doLXBhZ2VzL3NyYy9jb21wb25lbnRzL2FwcC5jb21wb25lbnQudHMuQXBwQ29tcG9uZW50Lmh0bWwiLCJuZzovLy9Vc2Vycy9CZWF1dGlzb3MvcHJvamVjdHMvQUNLL3Jlc3VtZS9naC1wYWdlcy9zcmMvY29tcG9uZW50cy9hcHAuY29tcG9uZW50LnRzLkFwcENvbXBvbmVudF9Ib3N0Lmh0bWwiXSwic291cmNlc0NvbnRlbnQiOlsiICIsIkhlbGxvIFdvcmxkIG9mIEFuZ3VsYXI0IiwiPGFwcD48L2FwcD4iXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7Ozs7Ozs7OztvQkNBQTs7OztvQkNBQTtNQUFBO2FBQUE7VUFBQTs7OyJ9
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiL1VzZXJzL0JlYXV0aXNvcy9wcm9qZWN0cy9BQ0svcmVzdW1lL2doLXBhZ2VzL3NyYy9jb21wb25lbnRzL2FwcC5jb21wb25lbnQubmdmYWN0b3J5LnRzIiwidmVyc2lvbiI6Mywic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsibmc6Ly8vVXNlcnMvQmVhdXRpc29zL3Byb2plY3RzL0FDSy9yZXN1bWUvZ2gtcGFnZXMvc3JjL2NvbXBvbmVudHMvYXBwLmNvbXBvbmVudC50cyIsIm5nOi8vL1VzZXJzL0JlYXV0aXNvcy9wcm9qZWN0cy9BQ0svcmVzdW1lL2doLXBhZ2VzL3NyYy9jb21wb25lbnRzL2FwcC5jb21wb25lbnQudHMuQXBwQ29tcG9uZW50Lmh0bWwiLCJuZzovLy9Vc2Vycy9CZWF1dGlzb3MvcHJvamVjdHMvQUNLL3Jlc3VtZS9naC1wYWdlcy9zcmMvY29tcG9uZW50cy9hcHAuY29tcG9uZW50LnRzLkFwcENvbXBvbmVudF9Ib3N0Lmh0bWwiXSwic291cmNlc0NvbnRlbnQiOlsiICIsIjxkaXYgY2xhc3M9XCJmbGV4LXZhbGlnbi1jZW50ZXIgaGVpZ2h0LWZ1bGwgZmxleC1jZW50ZXJcIj48ZGl2IGNsYXNzPVwicGFkIHRleHQtNHhcIj48YSBjbGFzcz1cIm5vLWEtc3R5bGUgcGFkIGJvcmRlci0yIGJvcmRlci1wb3NpdGl2ZSB0ZXh0LXBvc2l0aXZlIHRleHQtY2VudGVyIGhvdmVyLWJnLXBvc2l0aXZlIGhvdmVyLXRleHQtd2hpdGVcIiBocmVmPVwiQWNrZXIgQXBwbGUgUmVzdW1lLnBkZlwiPmRvd25sb2FkIEFja2VyIERhd24gQXBwbGUgcmVzdW1lPC9hPjwvZGl2PjwvZGl2PiIsIjxhcHA+PC9hcHA+Il0sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs7Ozs7b0JDQUE7TUFBQTtNQUFBLDhCQUF3RDtNQUFBO01BQUEsOEJBQXlCO01BQUE7VUFBQTtNQUFBLDhCQUE4STs7OztvQkNBL047TUFBQTthQUFBO1VBQUE7OzsifQ==
