@@ -10,7 +10,7 @@
     "watch:ng:hmr": "ng serve --open --configuration=hmr",
     "watch:templates": "npm run compile:templates -- --watch",
     "watch:ng": "ng serve --open",
-    "build": "ng build",
+    "build": "ng build --prod --output-hashing=none --stats-json",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
