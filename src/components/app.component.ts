@@ -1,5 +1,5 @@
-import {  Component } from "@angular/core"
-import { string } from "./templates/app.pug"
+import {  Component } from '@angular/core'
+import { string } from './templates/app.pug'
 
 @Component({
   selector:"app",
