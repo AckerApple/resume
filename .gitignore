@@ -1,5 +1,9 @@
-updaters
+updaters/
 .DS_Store
+*DS_Store
+*.template.ts
+stats.json
+*.js.map
 
 # Logs
 logs
