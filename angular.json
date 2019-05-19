@@ -23,8 +23,10 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
+              "src/runtime.json",
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/stats.html"
             ],
             "styles": [
               "src/styles.scss",
@@ -55,6 +57,10 @@
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.prod.ts"
+                },
+                {
+                  "replace": "src/runtime.json",
+                  "with": "src/environments/runtime/runtime.prod.json"
                 }
               ],
               "optimization": true,
@@ -109,8 +115,10 @@
             ],
             "scripts": [],
             "assets": [
+              "src/runtime.json",
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/stats.html"
             ]
           }
         },
@@ -128,7 +136,7 @@
         }
       }
     },
-    "cordova": {
+    "ios": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -142,14 +150,16 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "./cordova/www",
+            "outputPath": "./cordova/ios/www",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
+              "src/runtime.json",
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/stats.html"
             ],
             "styles": [
               "src/styles.scss",
@@ -163,11 +173,11 @@
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.cordova.hmr.ts"
+                  "with": "src/environments/environment.ios.hmr.ts"
                 },
                 {
                   "replace": "src/runtime.json",
-                  "with": "src/environments/runtime/runtime.cordova.json"
+                  "with": "src/environments/runtime/runtime.ios.json"
                 }
               ]
             },
@@ -175,11 +185,15 @@
               "fileReplacements": [
                 {
                   "replace": "src/index.html",
-                  "with": "src/index.cordova.html"
+                  "with": "src/index.ios.html"
                 },
                 {
                   "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.cordova.ts"
+                  "with": "src/environments/environment.ios.ts"
+                },
+                {
+                  "replace": "src/runtime.json",
+                  "with": "src/environments/runtime/runtime.ios.json"
                 }
               ],
               "optimization": true,
@@ -234,8 +248,143 @@
             ],
             "scripts": [],
             "assets": [
+              "src/runtime.json",
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/stats.html"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "src/tsconfig.app.json",
+              "src/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "android": {
+      "root": "",
+      "sourceRoot": "src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "./cordova/android/www",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "src/tsconfig.app.json",
+            "assets": [
+              "src/runtime.json",
+              "src/favicon.ico",
+              "src/assets",
+              "src/stats.html"
+            ],
+            "styles": [
+              "src/styles.scss",
+              "./node_modules/@fortawesome/fontawesome-free/css/all.min.css"
+            ],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "hmr": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.android.hmr.ts"
+                },
+                {
+                  "replace": "src/runtime.json",
+                  "with": "src/environments/runtime/runtime.android.json"
+                }
+              ]
+            },
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/index.html",
+                  "with": "src/index.android.html"
+                },
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.android.ts"
+                },
+                {
+                  "replace": "src/runtime.json",
+                  "with": "src/environments/runtime/runtime.android.json"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "resume-app:build"
+          },
+          "configurations": {
+            "hmr": {
+              "hmr": true,
+              "browserTarget": "resume-app:build:hmr"
+            },
+            "production": {
+              "browserTarget": "resume-app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "resume-app:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "src/tsconfig.spec.json",
+            "karmaConfig": "src/karma.conf.js",
+            "styles": [
+              "src/styles.scss"
+            ],
+            "scripts": [],
+            "assets": [
+              "src/runtime.json",
+              "src/favicon.ico",
+              "src/assets",
+              "src/stats.html"
             ]
           }
         },

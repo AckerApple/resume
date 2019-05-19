@@ -4,6 +4,10 @@ updaters/
 *.template.ts
 stats.json
 *.js.map
+**/ios/build
+android/app/*
+**/android/app/build
+
 
 # Logs
 logs

@@ -1,0 +1,55 @@
+fx-tracker(
+  #fx = "FxTracker"
+  "[activatedRoute]" = "fx.loaded && outlet.activated ? outlet.activatedRoute : null"
+)
+
+ng-container(
+  "[(htmlWidthModel)]"="AppData.width"
+)
+
+route-reporter(#router="RouteReporter")
+.height-full.flex-stacked.flex-1(
+  id="top" name="top"
+  "(swipeleft)" = "AppData.navAhead()"
+  "(swiperight)" = "AppData.navBack()"
+)
+  .height-50
+    .top-0.pos-fixed.bg-positive.text-white.width-full.border-bottom.border-grey-5x(
+      style="z-index:2"
+    )
+      //-ios only, space from time bar
+      .height-20(
+        *ngIf="AppData.environment.platform==='ios'"
+      )
+
+      .flex-valign-center.pad-h.height-50
+        a.pos-abs(
+          *ngIf="router.activated?.routeConfig?.path"
+          routerLink="../"
+        )
+          i.fas.fa-arrow-circle-left.fa-2x.text-white
+        .flex-1.text-center.pad-h-2x
+          strong.text-3x
+            i("[ngClass]"="router.activated?.routeConfig?.data?.icon")
+            |&nbsp;&nbsp;{{ router.activated?.routeConfig?.data?.title }}
+
+    //-chrome above color coverage
+    .pos-fixed.bg-positive.height-70.width-full(
+      style="top:-70px;z-index:1"
+    )
+      |&nbsp;
+
+  .pos-rel.pos-abs-kids.flex-1.flex-grow-router-outlet.bg-dark.text-white.pad-top(
+    "[ngClass]" = "{'overflow-hidden':fx.inFx}"
+    "[@slideInOutLeftKids]"    = "{value:fx.id,params:{time:'250ms'}}"
+    "(@slideInOutLeftKids.start)" = "fx.inFx=true"
+    "(@slideInOutLeftKids.done)"  = "fx.delayOutFx()"
+  )
+    router-outlet(#outlet="outlet")
+
+  div(*ngIf="AppData.debug")
+    debug-area
+      debug-item(
+        name = "environment"
+        "[value]" = "AppData.environment"
+      )

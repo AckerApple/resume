@@ -1,0 +1,72 @@
+.pad-h.flex-center.flex-stacked.flex-valign-center(
+  style="flex-grow:.5"
+)
+  .animated.fast.swing.delay-300ms.text-white.width-full.max-width-400
+    h1.margin-bottom-0(
+      "(click)" = "AppData.debugTap()"
+    )
+      .inline-block.invisible
+        i.fas.fa-apple-alt
+      .inline-block(
+        "[@fadeInOut]" = "{value:1,params:{time:'1s'}}"
+      )
+        .animated.bounce
+          i.fas.fa-apple-alt
+          strong &nbsp;Acker Apple
+    .bg-grey-3x.child-pad.text-center
+      .animated(
+        "[class.pulse]" = "mouseover===0"
+        "(mouseover)" = "mouseover=0"
+        "(mouseout)" = "mouseover=null"
+      )
+        a.no-a-style.radius-5.bg-calm.pad.flex-valign-center(
+          routerLink = "life"
+        )
+          .pos-rel.opacity-90
+            .pos-abs(style="top:-5px")
+              i.fa-2x.fas.fa-hand-spock
+            |&nbsp;
+          strong.flex-1 LIFE
+          .invisible &nbsp;
+            
+
+      .animated(
+        "[class.pulse]" = "mouseover===1"
+        "(mouseover)"="mouseover=1"
+        "(mouseout)"="mouseover=null"
+      )
+        a.no-a-style.radius-5.bg-energized.pad.flex-valign-center(
+          routerLink = "career"
+        )
+          .pos-rel.opacity-90
+            .pos-abs(style="top:-5px")
+              i.fa-2x.fas.fa-rocket
+            |&nbsp;
+          strong.flex-1 CAREER
+          .invisible &nbsp;
+
+      .animated(
+        "[class.pulse]" = "mouseover===2"
+        "(mouseover)"="mouseover=2"
+        "(mouseout)"="mouseover=null"
+      )
+        a.no-a-style.radius-5.bg-royal.pad.flex-valign-center(
+          routerLink = "passion"
+        )
+          .pos-rel.opacity-90
+            .pos-abs(style="top:-5px")
+              i.fa-2x.fas.fa-heart
+            |&nbsp;
+          strong.flex-1 PASSION
+          .invisible &nbsp;
+    .text-right
+      .flex-evenly(
+        "[@fadeInOut]" = "{value:1,params:{time:'1s'}}"
+      )
+        .text-center
+          a.text-white.text-xs.opacity-80(
+            routerLink = "stats"
+          ) app stats
+
+        .text-xs.animated.rubberBand.delay-2s.slower
+          |version {{ version }}

@@ -1,0 +1,19 @@
+.pad
+  h1 Techi-type Stats
+
+div(
+  #ewm = "ElementWidthModel"
+  "[(elementWidthModel)]" = "width"
+)
+
+div(
+  "[style.display]" = "ewm.inChange ? 'none' : 'block'"
+  "[style.width.px]"="width"
+)
+  iframe(
+    src = "/stats.html"
+    "[attr.width]"     = "width"
+    "[style.width.px]" = "width"
+    height = "800"
+    frameBorder = "0"
+  )
