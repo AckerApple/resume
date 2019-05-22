@@ -1,5 +1,5 @@
 # Resume of Acker Dawn Apple
-Acker.Dawn.Apple@GMail.com of Coconut Creek, FL
+me@AckerApple.com of Coconut Creek, FL
 
 [![hire me](https://ackerapple.github.io/resume/assets/images/hire-me-badge.svg)](https://ackerapple.github.io/resume/)
 

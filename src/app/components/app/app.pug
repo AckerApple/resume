@@ -7,6 +7,8 @@ ng-container(
   "[(htmlWidthModel)]"="AppData.width"
 )
 
+ack-fixed-element-stage
+
 route-reporter(#router="RouteReporter")
 .height-full.flex-stacked.flex-1(
   id="top" name="top"
@@ -22,16 +24,15 @@ route-reporter(#router="RouteReporter")
         *ngIf="AppData.environment.platform==='ios'"
       )
 
-      .flex-valign-center.pad-h.height-50
+      .flex-valign-center.pad-right.pad-left-xs.height-50
         a.pos-abs(
           *ngIf="router.activated?.routeConfig?.path"
-          routerLink="../"
+          "[routerLink]"="AppData.RouteHistory.back || '../'"
         )
           i.fas.fa-arrow-circle-left.fa-2x.text-white
-        .flex-1.text-center.pad-h-2x
-          strong.text-3x
-            i("[ngClass]"="router.activated?.routeConfig?.data?.icon")
-            |&nbsp;&nbsp;{{ router.activated?.routeConfig?.data?.title }}
+        .flex-1.text-center.pad-h-3x.text-3x.text-overflow
+          i("[ngClass]"="router.activated?.routeConfig?.data?.icon")
+          |&nbsp;{{ router.activated?.routeConfig?.data?.title }}
 
     //-chrome above color coverage
     .pos-fixed.bg-positive.height-70.width-full(
@@ -39,7 +40,7 @@ route-reporter(#router="RouteReporter")
     )
       |&nbsp;
 
-  .pos-rel.pos-abs-kids.flex-1.flex-grow-router-outlet.bg-dark.text-white.pad-top(
+  .main-outlet.pos-rel.pos-abs-kids.flex-1.flex-grow-router-outlet.text-white(
     "[ngClass]" = "{'overflow-hidden':fx.inFx}"
     "[@slideInOutLeftKids]"    = "{value:fx.id,params:{time:'250ms'}}"
     "(@slideInOutLeftKids.start)" = "fx.inFx=true"
@@ -53,3 +54,19 @@ route-reporter(#router="RouteReporter")
         name = "environment"
         "[value]" = "AppData.environment"
       )
+      debug-item(
+        name = "routeHistory"
+        "[value]" = "AppData.RouteHistory.routeHistory"
+      )
+
+  ng-container(
+    "[(screenScrollModelY)]" = "screenScrollModelY"
+  )
+  .pos-fixed.bottom-0.right-0.pad-xxs(
+    *ngIf="screenScrollModelY > 200"
+    goto-top = ""
+  )
+    a.fa-2x.fas.fa-arrow-circle-up.text-white.opacity-half(
+      "[@fadeInUp]" = "screenScrollModelY > 200"
+      "[@fadeOutDown]" = "screenScrollModelY < 200"
+    )

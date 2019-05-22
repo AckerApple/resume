@@ -1,0 +1,25 @@
+.flex
+  .flex-1
+    .width-full.flex.bg-grey.radius-5
+      div(
+        *ngFor="let item of AckMeters;let first=first;let last=last"
+        "[style.width.%]"="item.percent"
+      )
+        .text-center(
+          "[ngClass]" = "item.meterClass"
+          "[class.radius-left-5]" = "first"
+          "[class.radius-right-5]" = "last"
+          "[style.height]" = "options?.height"
+          "[style.min-height.px]" = "5"
+        )
+          ng-container(*ngTemplateOutlet="item.meterLabel")
+      .flex-1(
+        "[style.height]" = "options?.height"
+        "[style.min-height.px]" = "5"
+      )
+.flex
+  .text-center(
+    *ngFor="let item of AckMeters"
+    "[style.width.%]"="item.percent"
+  )
+    ng-container(*ngTemplateOutlet="item.content")

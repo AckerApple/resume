@@ -1,8 +1,67 @@
-.pad-h.flex-center.flex-stacked.flex-valign-center(
-  style="flex-grow:.5"
+ack-modal(
+  *ngIf="showEmailModal"
+  "(close)" = "showEmailModal=false"
+  backgroundColor = "rgba(3,3,3,.7)"
 )
+  .pad.radius-5(
+    style="border:1px rgba(3,3,3,.7) solid;background-color:#CCC"
+  )
+    h2 My Email Address
+    .text-center
+      a(
+        href="mailto:me@AckerApple.com?subject=Contact from app"
+      )
+        |me@AckerApple.com
+    br
+    br
+    .pad
+      a.block.pad.radius-5.text-center.text-white(
+        "(click)" = "copyEmail()"
+        "[ngClass]" = "hasEmailCopy ? 'bg-energized' : 'bg-positive'"
+      )
+        |COPY EMAIL
+
+ack-modal(
+  *ngIf="showPhoneModal"
+  "(close)" = "showPhoneModal=false"
+  backgroundColor = "rgba(3,3,3,.7)"
+)
+  .pad.radius-5(
+    style="border:1px rgba(3,3,3,.7) solid;background-color:#CCC"
+  )
+    h2 My Phone Number
+    .text-center
+      a(
+        href="tel:5612392967"
+      )
+        |(561) 239-2967
+    br
+    br
+    .pad
+      a.block.pad.radius-5.text-center.text-white(
+        "(click)" = "copyPhone()"
+        "[ngClass]" = "hasPhoneCopy ? 'bg-energized' : 'bg-positive'"
+      )
+        |COPY PHONE
+
+.flex-center
   .animated.fast.swing.delay-300ms.text-white.width-full.max-width-400
-    h1.margin-bottom-0(
+    br
+    .flex-center.width-full
+      .max-width-500.flex-1.animated.rubberBand.slower.delay-2s(
+        style="height:60px"
+      )
+        .flex-center
+          .width-full.flex-1(
+            *ngIf="delay2"
+            "[@fadeInOut]" = "1"
+            style="max-width:280px"
+          )
+            audio.width-full(controls)
+              source(src="assets/audio/AppIntro.mp3" type="audio/mpeg")
+              |Your device does not support audio elements.
+
+    h1.margin-0(
       "(click)" = "AppData.debugTap()"
     )
       .inline-block.invisible
@@ -60,13 +119,32 @@
           strong.flex-1 PASSION
           .invisible &nbsp;
     .text-right
-      .flex-evenly(
+      .flex-evenly.flex-valign-center(
         "[@fadeInOut]" = "{value:1,params:{time:'1s'}}"
       )
-        .text-center
+        strong.text-center
           a.text-white.text-xs.opacity-80(
             routerLink = "stats"
           ) app stats
 
-        .text-xs.animated.rubberBand.delay-2s.slower
+        strong.text-center
+          a.text-white.text-xs.opacity-80(
+            href = "https://ackerapple.github.com/resume/"
+            target = "_blank"
+          ) website
+
+        //-.animated.rubberBand.delay-3s.slower
+        strong.text-xs
           |version {{ version }}
+    .flex-evenly.child-pad.pad-top-2x
+      a.no-a-style.radius-half.width-60.height-60.bg-positive.flex-valign-center(
+        "(click)" = "showPhoneModal = !showPhoneModal"
+      )
+        i.fas.fa-phone.fa-2x
+      
+      a.no-a-style.radius-half.width-60.height-60.bg-balanced.flex-valign-center(
+        "(click)" = "showEmailModal = !showEmailModal"
+      )
+        i.fas.fa-envelope.fa-2x
+    div
+      br

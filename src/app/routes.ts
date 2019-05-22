@@ -1,8 +1,10 @@
 import { MainMenu } from './components/main-menu/MainMenu.component'
 import { Resume } from './components/resume/resume.component'
-import { ComingSoon } from './components/coming-soon/ComingSoon.component'
+import { ResumeHighlights } from './components/resume-highlights/ResumeHighlights.component'
+//import { ComingSoon } from './components/coming-soon/ComingSoon.component'
 import { BundleStats } from './components/bundle-stats/BundleStats.component'
 import { Life } from './components/life/Life.component'
+import { Passion } from './components/passion/Passion.component'
 import { Route } from '@angular/router';
 
 export const routes: Route[] = [{
@@ -20,6 +22,13 @@ export const routes: Route[] = [{
     icon:'fas fa-rocket'
   }
 },{
+  path:'career/highlights',
+  component:ResumeHighlights,
+  data:{
+    title:'Resume Highlights',
+    icon:'fas fa-file'
+  }
+},{
   path:'career',
   component:Resume,
   data:{
@@ -28,7 +37,7 @@ export const routes: Route[] = [{
   }
 },{
   path:'passion',
-  component:ComingSoon,
+  component:Passion,
   data:{
     title:'Passion',
     icon:'fas fa-heart'
@@ -38,6 +47,6 @@ export const routes: Route[] = [{
   component:BundleStats,
   data:{
     title:'Bundle Stats',
-    icon:'fas fa-chart'
+    icon:'fas fa-thermometer'
   }
 }];

@@ -1,0 +1,51 @@
+.flex-center
+  .max-width-500.flex-1.pad
+    .flex-center
+      .width-full.flex-1.pad-v-2x(
+        style="max-width:280px"
+      )
+        audio.width-full(controls)
+          source(src="assets/audio/Passions.mp3" type="audio/mpeg")
+          |Your device does not support audio elements.
+
+    h2.flex-valign-center
+      i.fas.fa-female.fa-lg(
+        style="color:#FF6666;"
+      )
+      |&nbsp;My Wife is a TEN
+    p On a scale of #[strong 1-to-wife], here is how I rate my other passions
+
+    a.block.margin-v-lg(
+      *ngFor="let item of passions"
+    )
+      ng-container(#showDetails="var" "[var]"="false")
+      .radius-10(
+        "(click)"="showDetails.var=!showDetails.var"
+        "[ngClass]" = "{'bg-warning text-black':showDetails.var}"
+      )
+        div(
+          *ngIf = "showDetails.var"
+          "[@fadeInOutUp]" = "1"
+        )
+          .pos-rel
+            .pos-abs.right-0
+              i.fas.fa-times-circle.opacity-half.fa-lg
+          .text-justify.pad-2x.text-sm(
+            style="white-space:pre-wrap;"
+          )
+            .pad-top-xs {{ item.details }}
+        .flex
+          .pad-top-xs.text-xs.pad-right 1
+          .flex-1
+            .pos-rel
+              .pos-abs.top-0.right-0.pad-right-xs
+                i.fas.fa-info-circle.opacity-half
+            ack-meter-display
+              ack-meter(
+                "[percent]" = "item.rating * 10"
+                "[meterClass]"  = "item.colorClass"
+              )
+                ng-template(#meterLabel="")
+                  strong {{item.rating}}
+                |{{item.title}}
+          .pad-top-xs.text-xs.pad-left wife

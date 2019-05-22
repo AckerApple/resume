@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { string } from "./life.template"
 import { animations } from "ack-angular-fx"
-import {version} from '../../../../package.json'
 import { ack } from "ack-x/browser"
 
 export interface dateDec{
@@ -15,7 +14,8 @@ export interface dateDec{
 }
 
 @Component({
-  template: string
+  template: string,
+  animations:animations
 }) export class Life {
   nextB:Date
   born = new Date(1982, 9, 10, 8, 0, 0, 0).getTime()

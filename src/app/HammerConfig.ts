@@ -1,6 +1,3 @@
-import { CommonModule } from "@angular/common"
-//import { RouterModule } from "@angular/router"
-
 import * as Hammer from "hammerjs"
 import {
   HammerGestureConfig, HAMMER_GESTURE_CONFIG

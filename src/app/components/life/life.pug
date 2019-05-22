@@ -1,5 +1,16 @@
-.pad.text-center.flex-evenly.flex-wrap.child-margin
-  
+.flex-center
+  .width-full.flex-1.pad-v-2x(
+    style="max-width:280px"
+  )
+    br
+    audio.width-full(controls)
+      source(src="assets/audio/LifePageAudio.mp3" type="audio/mpeg")
+      |Your device does not support audio elements.
+br
+br
+
+
+.pad-h.text-center.flex-evenly.flex-wrap.child-margin
   .flex-1.pad.border.border-grey-4x.radius-5.flex-stacked.bg-white
     .pad.flex-1.flex-valign-center.flex-center
       div
