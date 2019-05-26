@@ -7,6 +7,8 @@ stats.json
 **/ios/build
 android/app/*
 **/android/app/build
+**/platforms/ios
+**/platforms/android
 
 
 # Logs
