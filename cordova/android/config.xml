@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.cordova.ackerapple" version="2.0.17" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="io.cordova.ackerapple" version="2.0.20" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Acker Apple</name>
     <description>
         The life and career of South Florida's finest Software Engineer. Listen and learn what Acker Apple brings to the table in this presentation app of skills, talents and abilities.
     </description>
-    <author email="me@AckerApple.com" href="https://ackerapple.github.io/resume/">
+    <author email="me@AckerApple.com" href="https://ackerapple.com/">
         Acker Apple
     </author>
     <content src="index.html" />
@@ -15,6 +15,7 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <allow-navigation href="https://*youtube.com/*"/>
     <preference name="Hostname" value="app" />
     <preference name="WKSuspendInBackground" value="false" />
     <preference name="MixedContentMode" value="2" />

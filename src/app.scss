@@ -9,9 +9,12 @@ html{
   padding-bottom:20px;
 }
 
-html, .bg-fade,
-.flex-grow-router-outlet > .ng-animating,
-.flex-grow-router-outlet > :last-child
+.titlelessRouteWrap{
+  position: relative;
+  top:-50px;
+}
+
+html, .bg-fade
 {
 /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#303030+66,5e5e5e+100 */
 background: #303030; /* Old browsers */
@@ -21,3 +24,5 @@ background: linear-gradient(to bottom, #303030 66%,#5e5e5e 100%); /* W3C, IE10+,
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#303030', endColorstr='#5e5e5e',GradientType=0 ); /* IE6-9 */
 background-attachment: fixed;
 }
+
+@import "./custom-forms.scss";

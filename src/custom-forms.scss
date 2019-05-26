@@ -1,0 +1,86 @@
+.form-control{
+  padding-top:0.4em;padding-right:0.4em;padding-bottom:0.4em;padding-left:0.4em;
+}
+
+.input.form-control,
+input.form-control,
+select.form-control{
+  color:#333;
+  border:1px solid #BBB;
+  font-size:1.2em;
+  width:100%;
+  height:40px;
+}
+
+.input,
+select.input,
+input[type=text].input,
+input[type=password].input,
+button.input{
+  @extend .form-control;
+  border-radius:3px;
+  height:40px;
+}
+
+
+.input,
+.form-control,
+.form-control.input-sm,
+.form-control.input-md,
+.form-control.input-lg{
+  line-height:1em;
+}
+
+.input-sm {font-size:.9em;height:21px}
+
+.form-control.input-sm,
+select.input-sm,
+input[type=text].input-sm,
+input[type=password].input-sm,
+button.input-sm
+{
+  padding-top:0.3em;padding-right:0.3em;padding-bottom:0.3em;padding-left:0.3em;
+  @extend .input-sm
+}
+
+.input-md {
+  font-size:1.1em;height:37px;
+  padding-top:0.3em;padding-right:0.3em;padding-bottom:0.3em;padding-left:0.3em;
+}
+
+.form-control.input-md,
+select.input-md,
+input[type=text].input-md,
+input[type=password].input-md,
+button.input-md{
+  padding-top:0.5em;padding-right:0.5em;padding-bottom:0.5em;padding-left:0.5em;
+  @extend .input-md;
+}
+
+.input-lg {
+  padding-top:0.3em;padding-right:0.4em;padding-bottom:0.3em;padding-left:0.4em;
+  font-size:1.5em;height:45px;
+}
+
+.form-control.input-lg,
+select.input-lg,
+input[type=text].input-lg,
+input[type=password].input-lg,
+button.input-lg{
+  padding-top:0.6em;padding-right:0.6em;padding-bottom:0.6em;padding-left:0.6em;
+  @extend .input-lg
+}
+
+button.btn{
+  border:0;
+}
+
+.btn{
+  border-radius:5px;
+  color:white;display:inline-block;
+}
+
+.btn-lg{
+  padding-top:.7em;padding-right:.7em;padding-bottom:.7em;padding-left:.7em;
+  font-size:1.2em;
+}

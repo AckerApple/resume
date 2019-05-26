@@ -9,6 +9,7 @@ import { version } from '../../../../package.json'
   animations:animations
 })
 export class MainMenu {
+  confirmIntro:boolean
   version = version
   delay2 = false
   mouseover:number
@@ -19,7 +20,18 @@ export class MainMenu {
   showEmailModal:boolean
 
   constructor(public AppData:AppData){
-    setTimeout(()=>this.delay2=true, 2000)
+  }
+
+  ngOnInit(){
+    this.AppData.load
+    .then(()=>{
+      setTimeout(()=>{
+        if( !this.AppData.offline.completedIntroAt ){
+          this.AppData.completedIntro()
+        }
+        this.delay2=true
+      }, 2000)
+    })
   }
 
   copyEmail(){

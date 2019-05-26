@@ -1,0 +1,25 @@
+a.text-white.bg-positive.block.pad-sm.radius-5.text-center(
+  "(click)" = "getLocation()"
+)
+  i.fas.fa-street-view.fa-lg(
+    *ngIf="!loadCount"
+  )
+  i.fa.fa-spinner.fa-spin.fa-lg(
+    *ngIf="loadCount"
+  )
+
+
+.height-400(
+  *ngIf="coords"
+  "[@fadeInOutUp]" = "1"
+)
+  agm-map.height-full.width-full.block(
+    "[zoom]" = "12"
+    "[latitude]"  = "coords.latitude"
+    "[longitude]" = "coords.longitude"
+  )
+    agm-overlay(
+      "[latitude]"  = "coords.latitude"
+      "[longitude]" = "coords.longitude"
+    )
+      i.fas.fa-2x.fa-map-pin.text-assertive.animated.bounce.slower

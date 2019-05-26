@@ -17,17 +17,20 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.0.17</string>
+	<string>2.0.20</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>2.0.17</string>
+	<string>2.0.20</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>ackerapple.com</key>
+			<dict/>
+		</dict>
 	</dict>
 	<key>NSMainNibFile</key>
 	<string/>
@@ -51,5 +54,15 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>camera access needed to demonstrate taking pictures</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>need location access to demonstrate finding user</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>photo library access needed to demonstrate getting pictures from there</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>need photo library access to save demonstration pictures there</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>used for demonstrative purposes only (data is not stored)</string>
 </dict>
 </plist>

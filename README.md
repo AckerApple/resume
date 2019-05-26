@@ -1,7 +1,7 @@
 # Resume of Acker Dawn Apple
 me@AckerApple.com of Coconut Creek, FL
 
-[![hire me](https://ackerapple.github.io/resume/assets/images/hire-me-badge.svg)](https://ackerapple.github.io/resume/)
+[![hire me](https://ackerapple.github.io/resume/assets/images/hire-me-badge.svg)](https://ackerapple.com/)
 
 --------
 
@@ -84,6 +84,6 @@ Extremely well experienced with trouble-shooting and rooting out the cause of pr
 
 --------
 
-> [tap here web app](https://ackerapple.github.io/resume/)
+> [tap here web app](https://ackerapple.com)
 
 --------

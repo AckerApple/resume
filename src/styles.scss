@@ -40,7 +40,7 @@ body,html{
 
 /* help ng fxs  */
 .pos-abs-kids > *{
-    position:absolute;width:100%;
+  position:absolute;width:100%;height:100%;
 }
 
 .height-full-router-wrap > :last-child,
@@ -66,5 +66,6 @@ body,html{
 .animated.delay-600ms {
   animation-delay: 0.6s;
 }
+
 
 @import "./app.scss";

@@ -9,9 +9,9 @@
 		<key>CFBundleIdentifier</key>
 		<string>io.cordova.ackerapple</string>
 		<key>CFBundleShortVersionString</key>
-		<string>2.0.13</string>
+		<string>2.0.20</string>
 		<key>CFBundleVersion</key>
-		<string>2.0.13</string>
+		<string>2.0.20</string>
 		<key>SigningIdentity</key>
 		<string>iPhone Developer: Acker Apple (VDHT5A37LC)</string>
 		<key>Team</key>
@@ -20,7 +20,7 @@
 	<key>ArchiveVersion</key>
 	<integer>2</integer>
 	<key>CreationDate</key>
-	<date>2019-05-20T17:01:41Z</date>
+	<date>2019-05-26T15:19:21Z</date>
 	<key>Name</key>
 	<string>Acker Apple</string>
 	<key>SchemeName</key>

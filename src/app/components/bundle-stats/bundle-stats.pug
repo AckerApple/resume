@@ -1,11 +1,6 @@
-.pad
-  //-
-    h1
-      i.fas.fa-thermometer
-      |&nbsp;&nbsp;This Apps Stats
 
 .pad
-  .code-sample.radius-5.margin-0(
+  .margin-0.text-smx(
     [innerHtml]="changelog | safeHtml"
   )
 br
@@ -32,8 +27,9 @@ div(
     )
 
 .flex.pad
-  a.flex-1.pad-v.radius-5.bg-positive.flex-valign-center(
+  a.flex-1.pad-v.radius-5.flex-valign-center(
     "(click)" = "appSizeChart=!appSizeChart"
+    "[ngClass]" = "appSizeChart ? 'bg-energized' : 'bg-positive'"
   )
     i.fas.fa-chart-pie.pad-h
     strong.flex-1.text-center

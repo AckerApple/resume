@@ -1,9 +1,24 @@
 ## CHANGE LOG
 - All notable changes to this project will be documented here.
 
-## [2.0.17] - 2019-05-22
+## [2.0.20] - 2019-05-25
+- Added NSLocationAlwaysUsageDescription
+- Added share button to photo capture demo
+- Added share button to main menu
+- Added social sharing section to demos
+- Changed link to resume into social sharing button
+
+## [2.0.19] - 2019-05-24
+- Redirect web links from github to ackerapple.com
+- Removed generic apple fruit icon from main screen
+- Added GPS demo
+- Added photo demo
+- Added device orientation demo
+
+## [2.0.18] - 2019-05-22
 - Added career video
 - Fixed safari home page
+- Fixed safari youtube career video
 
 ## [2.0.16] - 2019-05-21
 - Added intro audio

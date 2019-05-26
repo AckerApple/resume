@@ -1,0 +1,84 @@
+.flex-center
+  .flex-1.max-width-500
+    p.pad-h Learn hands on some of my development capabilities.
+    .child-margin-v.flex-stacked
+      .bg-royal.text-white.pad
+        a.flex-valign-center(
+          "(click)" = "shows.DeviceOrientation=!shows.DeviceOrientation"
+        )
+          .flex-1
+            i.fas.fa-arrows-alt
+            |&nbsp;&nbsp;
+            strong Device Orientation
+          a(
+            *ngIf="shows.DeviceOrientation"
+          )
+            i.fas.fa-times-circle.fa-lg
+        div(
+          *ngIf="shows.DeviceOrientation"
+          "[@fadeInOutUp]" = "1"
+        )
+          p.text-justify.text-sm
+            |Try moving your device all about and see what happens.
+          device-orientation
+
+      .bg-royal.text-white.pad
+        a.flex-valign-center.flex-1(
+          "(click)"="shows.showUserMedia=!shows.showUserMedia"
+        )
+          .flex-1
+            i.fas.fa-image
+            |&nbsp;&nbsp;
+            strong User Media
+          a(
+            *ngIf="shows.showUserMedia"
+          )
+            i.fas.fa-times-circle.fa-lg
+
+        div(
+          *ngIf="shows.showUserMedia"
+          "[@fadeInOutUp]" = "1"
+        )
+          p.text-justify.text-sm
+            |Take a photo and let's see what your device can see.
+          user-media-demo
+
+      .bg-royal.pad.text-white
+        a.flex-valign-center.flex-1(
+          "(click)"="shows.showDeviceLocation=!shows.showDeviceLocation"
+        )
+          .flex-1
+            i.fas.fa-map
+            |&nbsp;&nbsp;
+            strong Device Location
+          a(
+            *ngIf="shows.showDeviceLocation"
+          )
+            i.fas.fa-times-circle.fa-lg
+        div(
+          *ngIf="shows.showDeviceLocation"
+          "[@fadeInOutUp]" = "1"
+        )
+          p.text-justify.text-sm
+            |Test this apps ability to find your location using the button below.
+          device-location
+
+      .bg-royal.pad.text-white
+        a.flex-valign-center.flex-1(
+          "(click)"="shows.showSocialSharing=!shows.showSocialSharing"
+        )
+          .flex-1
+            i.fas.fa-external-link-alt
+            |&nbsp;&nbsp;
+            strong Social Sharing
+          a(
+            *ngIf="shows.showSocialSharing"
+          )
+            i.fas.fa-times-circle.fa-lg
+        div(
+          *ngIf="shows.showSocialSharing"
+          "[@fadeInOutUp]" = "1"
+        )
+          p.text-justify.text-sm
+            |Share as much as you would like to.
+          social-sharing

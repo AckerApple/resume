@@ -1,8 +1,3 @@
-fx-tracker(
-  #fx = "FxTracker"
-  "[activatedRoute]" = "fx.loaded && outlet.activated ? outlet.activatedRoute : null"
-)
-
 ng-container(
   "[(htmlWidthModel)]"="AppData.width"
 )
@@ -10,63 +5,91 @@ ng-container(
 ack-fixed-element-stage
 
 route-reporter(#router="RouteReporter")
-.height-full.flex-stacked.flex-1(
+
+//-chrome above color coverage
+//-
+  .pos-fixed.bg-dark.height-70.width-full(
+    style="left:0;top:-70px;z-index:1"
+  )
+    |&nbsp;
+
+table.height-full.width-full.bg-fade(
   id="top" name="top"
-  "(swipeleft)" = "AppData.navAhead()"
-  "(swiperight)" = "AppData.navBack()"
+  cellPadding="0" cellSpacing="0" border="0"
+  "(swipeleft)" = "swiping && AppData.navAhead()"
+  "(swiperight)" = "swiping && AppData.navBack()"
 )
-  .height-50
-    .top-0.pos-fixed.bg-positive.text-white.width-full.border-bottom.border-grey-5x(
-      style="z-index:2"
-    )
-      //-ios only, space from time bar
-      .height-20(
-        *ngIf="AppData.environment.platform==='ios'"
-      )
-
-      .flex-valign-center.pad-right.pad-left-xs.height-50
-        a.pos-abs(
-          *ngIf="router.activated?.routeConfig?.path"
-          "[routerLink]"="AppData.RouteHistory.back || '../'"
+  tbody(
+    *ngIf = "AppData.loaded"
+    "[@fadeInOutUp]" = "1"
+  )
+    tr
+      td
+        div(
+          "[style.height.px]"="AppData.environment.platform==='ios' ? 20 : null"
         )
-          i.fas.fa-arrow-circle-left.fa-2x.text-white
-        .flex-1.text-center.pad-h-3x.text-3x.text-overflow
-          i("[ngClass]"="router.activated?.routeConfig?.data?.icon")
-          |&nbsp;{{ router.activated?.routeConfig?.data?.title }}
+        
+        ng-container(#routeData="var" "[var]"="ActivatedRoute.firstChild?.routeConfig?.data")
 
-    //-chrome above color coverage
-    .pos-fixed.bg-positive.height-70.width-full(
-      style="top:-70px;z-index:1"
+        //-title bar
+        .top-0.pos-fixed.bg-positive.text-white.width-full.border-bottom.border-grey-2x(
+          *ngIf="routeData.var?.titleBar==null || routeData.var?.titleBar"
+          "[@slideInDown]" = "1"
+          "[@slideOutUp]" = "1"
+          style="z-index:2"
+          "[ngClass]" = "routeData.var?.titleClass || 'bg-positive'"
+        )
+          //-ios only, space from time bar
+          .height-20(
+            *ngIf="AppData.environment.platform==='ios'"
+          )
+
+          .flex-valign-center.pad-right.pad-left.height-50
+            a.pos-abs(
+              *ngIf="router.activated?.routeConfig?.path"
+              "[routerLink]"="AppData.RouteHistory.back || '../'"
+            )
+              i.fas.fa-chevron-left.fa-lg.text-white
+            .flex-1.text-center.pad-h-3x.text-3x.text-overflow
+              i("[ngClass]"="router.activated?.routeConfig?.data?.icon")
+              |&nbsp;{{ router.activated?.routeConfig?.data?.title }}
+
+        .height-50
+    fx-tracker(
+      #fx = "FxTracker"
+      "[activatedRoute]" = "fx.loaded && outlet.activated ? outlet.activatedRoute : null"
     )
-      |&nbsp;
-
-  .main-outlet.pos-rel.pos-abs-kids.flex-1.flex-grow-router-outlet.text-white(
-    "[ngClass]" = "{'overflow-hidden':fx.inFx}"
-    "[@slideInOutLeftKids]"    = "{value:fx.id,params:{time:'250ms'}}"
-    "(@slideInOutLeftKids.start)" = "fx.inFx=true"
-    "(@slideInOutLeftKids.done)"  = "fx.delayOutFx()"
-  )
-    router-outlet(#outlet="outlet")
-
-  div(*ngIf="AppData.debug")
-    debug-area
-      debug-item(
-        name = "environment"
-        "[value]" = "AppData.environment"
+    tr
+      td.height-full.pos-rel.text-white.height-full-router-wrap(
+        valign = "top"
+        "[ngClass]" = "{'overflow-hidden pos-abs-kids':fx.inFx}"
+        "[@slideInOutLeftKids]"    = "{value:fx.id,params:{time:'250ms'}}"
+        "(@slideInOutLeftKids.start)" = "fx.inFx=true"
+        "(@slideInOutLeftKids.done)"  = "fx.delayOutFx()"
       )
-      debug-item(
-        name = "routeHistory"
-        "[value]" = "AppData.RouteHistory.routeHistory"
-      )
+        router-outlet(#outlet="outlet")
 
-  ng-container(
-    "[(screenScrollModelY)]" = "screenScrollModelY"
+    tr
+      td(*ngIf="AppData.debug")
+        debug-area
+          debug-item(
+            name = "environment"
+            "[value]" = "AppData.environment"
+          )
+          debug-item(
+            name = "routeHistory"
+            "[value]" = "AppData.RouteHistory.routeHistory"
+          )
+
+//-scroll to top
+ng-container(
+  "[(screenScrollModelY)]" = "screenScrollModelY"
+)
+.pos-fixed.bottom-0.right-0.pad-xxs(
+  *ngIf="screenScrollModelY > 200"
+  goto-top = ""
+)
+  a.fa-2x.fas.fa-arrow-circle-up.text-white.opacity-half(
+    "[@fadeInUp]" = "screenScrollModelY > 200"
+    "[@fadeOutDown]" = "screenScrollModelY < 200"
   )
-  .pos-fixed.bottom-0.right-0.pad-xxs(
-    *ngIf="screenScrollModelY > 200"
-    goto-top = ""
-  )
-    a.fa-2x.fas.fa-arrow-circle-up.text-white.opacity-half(
-      "[@fadeInUp]" = "screenScrollModelY > 200"
-      "[@fadeOutDown]" = "screenScrollModelY < 200"
-    )

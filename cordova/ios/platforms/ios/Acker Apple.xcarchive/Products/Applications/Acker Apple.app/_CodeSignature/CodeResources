@@ -14,11 +14,11 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		GpC52pKEgL624MOjEFR/PYFMG8Q=
+		qZFEpeB1MAMvWEZpbOMbwQHqkv4=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		kvWYiX51+u65aT/yHyrnE3vD/BQ=
+		xMybS/JK6oTxuuXNm9aDXupFLTI=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -26,15 +26,15 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		naksiwMVXpxMJ++tyZvq2JI7Q9g=
+		I4M1KcbHA6/et0l+FG9x78Su7t8=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		H6Pmu/Q51RG1fT1QsAdbre41PPc=
+		zOe5hXKh75IIFbsgX91yyOoE07E=
 		</data>
 		<key>MainViewController.nib</key>
 		<data>
-		Ekds0QsCIYQujC7rVjHfOHfHe+E=
+		IMhps4nRblpG7t+eqHXILOWv7Ig=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -42,23 +42,35 @@
 		</data>
 		<key>config.xml</key>
 		<data>
-		rF55uArAXc5nM1RDnr6z672AATE=
+		NTTd8xzBENphDIc4l2lYr6G3hIw=
 		</data>
 		<key>embedded.mobileprovision</key>
 		<data>
-		FmjuoAYqvKPlqIOvhqroHYBEevY=
+		BZXfavzGfc03hrEl7aAMprYpRqU=
 		</data>
 		<key>www/3rdpartylicenses.txt</key>
 		<data>
-		It75FV2AkfeRuFEJXdw6Vsfg1lU=
+		gaQzAgmJ75WoiotAQozAbl/h9wQ=
 		</data>
 		<key>www/assets/Acker Apple Resume.pdf</key>
 		<data>
-		yUSezNk8S77C+FCklK+yrG4O9T0=
+		k7dRL+05nW/uNQGLo1PCm3aKcss=
 		</data>
-		<key>www/assets/audio/WoZ.mp3</key>
+		<key>www/assets/audio/AppIntro.mp3</key>
 		<data>
-		4uvWpygyrocwXfIMhXBZdG4+M94=
+		N5GaD3RsFAmblQWx38AKYQs+0fw=
+		</data>
+		<key>www/assets/audio/LifePageAudio.mp3</key>
+		<data>
+		QA4Y2NH8e5xQxuewP7/PJ7SIdU4=
+		</data>
+		<key>www/assets/audio/Passions.mp3</key>
+		<data>
+		5OiCgC0dAX+UCfJZKjZ4rB+OqEw=
+		</data>
+		<key>www/assets/docs/app-privacy.txt</key>
+		<data>
+		YkOv432ef+gNCsAkTUlx0v5AKxA=
 		</data>
 		<key>www/assets/fonts/Montserrat/Montserrat.css</key>
 		<data>
@@ -120,6 +132,26 @@
 		<data>
 		RR6wSJgHDuA1rAeantxe3f6FooU=
 		</data>
+		<key>www/assets/images/profile-60@3x.png</key>
+		<data>
+		S3rJ08ej1nFYrHBhJ3VlLuR0Q3Y=
+		</data>
+		<key>www/assets/images/profile-72@2x.png</key>
+		<data>
+		tjWphFP0uBImVyZy+ya2FxTNhjQ=
+		</data>
+		<key>www/assets/images/profile-83.5@2x.png</key>
+		<data>
+		CzIhbIYNYdKAl3sB1REUn7wmDXo=
+		</data>
+		<key>www/assets/images/profile-circle.png</key>
+		<data>
+		OA95nGq9yF1INEpQ4QVW8p4ph7A=
+		</data>
+		<key>www/assets/images/screen@2x~iphone.png</key>
+		<data>
+		YrJxawB+sap+392S5NFXkVu5Nv4=
+		</data>
 		<key>www/cordova-js-src/exec.js</key>
 		<data>
 		3QDPaUQrAr8Wq2XcQhqcl8DLabQ=
@@ -142,7 +174,7 @@
 		</data>
 		<key>www/cordova_plugins.js</key>
 		<data>
-		ADimqCOKXwJnuqa/6FLqts+/+fI=
+		aHoZTthE37lrMiVgHkJ+myRRC1s=
 		</data>
 		<key>www/es2015-polyfills.js</key>
 		<data>
@@ -214,11 +246,43 @@
 		</data>
 		<key>www/index.html</key>
 		<data>
-		S6HVB9TCVy4bHZqdvbvlX3LXXtg=
+		naJwhzmP4Z2s02coLIHUShoK4Ns=
 		</data>
 		<key>www/main.js</key>
 		<data>
-		2UvUtRcTWvjFbbS4tDkNogmeYjE=
+		wiFyVbgJTVHqvTRqENWERrZaMBY=
+		</data>
+		<key>www/plugins/cordova-plugin-camera/www/Camera.js</key>
+		<data>
+		/Tl12sGFo/UZbPqnupaaV0Hg0vU=
+		</data>
+		<key>www/plugins/cordova-plugin-camera/www/CameraConstants.js</key>
+		<data>
+		v2sA7ZeHf4g2R4hremuTEjIZPUY=
+		</data>
+		<key>www/plugins/cordova-plugin-camera/www/CameraPopoverOptions.js</key>
+		<data>
+		DFjhGlevsoLz/p7Ls+/7LBfept8=
+		</data>
+		<key>www/plugins/cordova-plugin-camera/www/ios/CameraPopoverHandle.js</key>
+		<data>
+		koRc23xo1lElHctG97l7ayo1asw=
+		</data>
+		<key>www/plugins/cordova-plugin-geolocation/www/Coordinates.js</key>
+		<data>
+		JNc1ygsJAitgQfNOko6ZQoGMoTU=
+		</data>
+		<key>www/plugins/cordova-plugin-geolocation/www/Position.js</key>
+		<data>
+		tIg0sy4E0R9vLffal6TXO+p8B6Y=
+		</data>
+		<key>www/plugins/cordova-plugin-geolocation/www/PositionError.js</key>
+		<data>
+		Z52rk4RmGPgH+q1CWVHvpy5vcWY=
+		</data>
+		<key>www/plugins/cordova-plugin-geolocation/www/geolocation.js</key>
+		<data>
+		xd1PUlgwzLl4gphru/VGluqXqvg=
 		</data>
 		<key>www/plugins/cordova-plugin-ionic-webview/src/www/ios/ios-wkwebview-exec.js</key>
 		<data>
@@ -236,6 +300,14 @@
 		<data>
 		hDT++3ZaOTp3t16AAFAibxtovj0=
 		</data>
+		<key>www/plugins/cordova-plugin-x-socialsharing/www/SocialSharing.js</key>
+		<data>
+		FGJyJH/LH8wa4wePGt4RtrC1ZBM=
+		</data>
+		<key>www/plugins/es6-promise-plugin/www/promise.js</key>
+		<data>
+		SaYUot7eUOO74AAVeBga+HSnf/E=
+		</data>
 		<key>www/polyfills.js</key>
 		<data>
 		/6RJmVvy66LM0KACQXIU9+t157U=
@@ -250,11 +322,11 @@
 		</data>
 		<key>www/stats.html</key>
 		<data>
-		nb8Qb6hrkuL/s/TU/VBe/5FJbP0=
+		ftbtnnK0xtReN2s0N+Hdk7Bdkz0=
 		</data>
 		<key>www/styles.css</key>
 		<data>
-		VMloC9KgVfmxAVlDpRy0RpCSK5Y=
+		F35ovLV81rI9FNA917GPJ0idkkM=
 		</data>
 		<key>www/wk-plugin.js</key>
 		<data>
@@ -281,14 +353,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			DFs/B8ckUru/poRK3D/MVOqYFM63MIBQLc8mu8zR6x8=
+			WwJhHsf+aUZLsoGzj9kjiO9ARoqXfCu8etxBYKy/ZwA=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			KtevttDa4X9dcH7Am3VSQRP9vAX19kQsaAV1Dou3o4I=
+			sSTysyDk77YjuD+r6K/QAAO8qI11be+zMc6wOFUeXTs=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
@@ -302,49 +374,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			TtbC9IXv1A3ncMy0EzPT3U8slYCvB0VEbHq/JnMtilM=
+			ep7OT9a58jUL+NDh9p28F9GWhxonuwufsnIka92Rvgg=
 			</data>
 		</dict>
 		<key>MainViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			KyR0seHTCx5WosBie3WYsgIgRaiD6wONUobQCKSx01g=
+			aXw1sJGNBgkA0+iBdQA330TJ789LQqckZE+9b96u6nw=
 			</data>
 		</dict>
 		<key>config.xml</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			x6sK82+eALtYA4m/CDGeWHcy3RljyRR33DBEieF7yZ0=
+			4J3Rbpmox0S5dRMjXt+tT0B1J3/kZXhhSFAgwojh8b8=
 			</data>
 		</dict>
 		<key>embedded.mobileprovision</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			0Uw5g56LJvNl7QEf2swC2N/N0plCxydlLjnyDOI66hM=
+			yxiDv/2685pDt0Cb6PP/OuHAhIE8On+ZvTrR8dpG+l4=
 			</data>
 		</dict>
 		<key>www/3rdpartylicenses.txt</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			bmQycxpeOv3gFtPF8/2SFBLtqIMjJpEuzFhAamOS9Yg=
+			TZZqbTRWHHXUty/qB5WR2qpqwCp8PZDt5zq18NeitCE=
 			</data>
 		</dict>
 		<key>www/assets/Acker Apple Resume.pdf</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8pMThdX/6c1PFLOqPAC9JeqgWisTLF+sbtIPahAdUek=
+			EtfWX4yV+i72y9o0xszlT7QxDZeFRVkrzzudNHMpLqk=
 			</data>
 		</dict>
-		<key>www/assets/audio/WoZ.mp3</key>
+		<key>www/assets/audio/AppIntro.mp3</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			JDH8w9kcu1VTeF57pbiKAEM/b/eK6ICp+I6DSCgJstQ=
+			nVoQUhBUILjwiQrfbBHAcZtBkGwG9nGw1vPKKG0cfUo=
+			</data>
+		</dict>
+		<key>www/assets/audio/LifePageAudio.mp3</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			2AEC/kT6NNbXCydxESINXEk9E03CoS1MTE3vUNXqdyQ=
+			</data>
+		</dict>
+		<key>www/assets/audio/Passions.mp3</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			PWU5wYmzWw86bfVbXO1PzBgs6ibqly+k5qLaGwLy4+0=
+			</data>
+		</dict>
+		<key>www/assets/docs/app-privacy.txt</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			hHNrOb7G1DLCfT8V2/6WzUXVL7GhXkmUpBQyW+AbP3k=
 			</data>
 		</dict>
 		<key>www/assets/fonts/Montserrat/Montserrat.css</key>
@@ -452,6 +545,41 @@
 			j7HaLXCNDTNFEnBlux3Gh9VRdnPphUAldrf7gLIp0JI=
 			</data>
 		</dict>
+		<key>www/assets/images/profile-60@3x.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Xlq8Q1/dDYfvzULvVZNxiOCPEb7M8Awasmnlbje+0A8=
+			</data>
+		</dict>
+		<key>www/assets/images/profile-72@2x.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			NqOGvMgkymCX5iSyyC+ZUvUS/kO0HbSIAlEUbFC2sOY=
+			</data>
+		</dict>
+		<key>www/assets/images/profile-83.5@2x.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			F2anc2XpwUPwZ2J+srqT7EuQATQwofeKJ64pM7qzZs4=
+			</data>
+		</dict>
+		<key>www/assets/images/profile-circle.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			+09tj8DtgBpTA9mqqvF19sSEiGPUmvQmOy09KfIv90E=
+			</data>
+		</dict>
+		<key>www/assets/images/screen@2x~iphone.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ukHEdS54g9qXRKbXplcUznXUNO7RaCmhjW2VWmZ7bxo=
+			</data>
+		</dict>
 		<key>www/cordova-js-src/exec.js</key>
 		<dict>
 			<key>hash2</key>
@@ -491,7 +619,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			4aBTsWvNJWE1Bu8/y7s8SDx79/NkU+RM94U5We2DVhw=
+			qb3qEbd1mKvt+k0tWP4PtzhM0Ye8R1OSnG6dX9k7LMo=
 			</data>
 		</dict>
 		<key>www/es2015-polyfills.js</key>
@@ -617,14 +745,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			aV+JFQYM+fN/995udXJg7nyjsRxDbSnHzIXUmo98e4o=
+			eygpbRwqCfNuwWSh3lWZgvlIVgswgD4kLSTKnhsqfJw=
 			</data>
 		</dict>
 		<key>www/main.js</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			2L5mCzivPhe2LBN+CaxFUC2WV7DjvOXc523uH3wjUTQ=
+			vx9jL0dHEU4njAJ9Y+QydEFeFVWf1shQ1BqRjVVLXMQ=
+			</data>
+		</dict>
+		<key>www/plugins/cordova-plugin-camera/www/Camera.js</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			/DpMZq7FrbVwiAPbYjr190ea8NHGPLsnbwbi8KjR3Ws=
+			</data>
+		</dict>
+		<key>www/plugins/cordova-plugin-camera/www/CameraConstants.js</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			wkl+aO8lHNbXrlvHUVFvZ3XWmxJ5kE3QH9Cb1DKW2i4=
+			</data>
+		</dict>
+		<key>www/plugins/cordova-plugin-camera/www/CameraPopoverOptions.js</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			rQlfvrBqSocgsPtkPqzytzsYymwS7jJHaaatC6XG0Fo=
+			</data>
+		</dict>
+		<key>www/plugins/cordova-plugin-camera/www/ios/CameraPopoverHandle.js</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			9IOEZkfMOskH8iiS25t1CoLQOEpPsEj4j/xUN5HLHBM=
+			</data>
+		</dict>
+		<key>www/plugins/cordova-plugin-geolocation/www/Coordinates.js</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			OH4uZizB3ij82a/TT821vkN5Hsyy31oaxYoHFJZMyDM=
+			</data>
+		</dict>
+		<key>www/plugins/cordova-plugin-geolocation/www/Position.js</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			gBdSYze1B05fJ7IFZalvq0ISfrke93IXvZ89xJ2tJo4=
+			</data>
+		</dict>
+		<key>www/plugins/cordova-plugin-geolocation/www/PositionError.js</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			dtY3PXkLe4gqm887NOgz3EqspLFWqTQvN4zklddCZZ0=
+			</data>
+		</dict>
+		<key>www/plugins/cordova-plugin-geolocation/www/geolocation.js</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			v22skvbiN2CQ1u+mi67mwi3DaHJqHEjkWxMTw7y6L64=
 			</data>
 		</dict>
 		<key>www/plugins/cordova-plugin-ionic-webview/src/www/ios/ios-wkwebview-exec.js</key>
@@ -655,6 +839,20 @@
 			JVFddhH/G0jM/7U0DOdpW1CvUNswIGcQB9WylyRtCBM=
 			</data>
 		</dict>
+		<key>www/plugins/cordova-plugin-x-socialsharing/www/SocialSharing.js</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			0NVlmXTgryAi59fIYf+ioGsWQAz0wMSaOA/Lc4qHVaw=
+			</data>
+		</dict>
+		<key>www/plugins/es6-promise-plugin/www/promise.js</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			9CIW7f5Dk7yEK84D9evgQc6ryThptFDJtCnHYeOvWAo=
+			</data>
+		</dict>
 		<key>www/polyfills.js</key>
 		<dict>
 			<key>hash2</key>
@@ -680,14 +878,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			m5ciwHYKwWEnvsBrxDr649m/xgZtVqThv7eEjJH558w=
+			Hhd2jhn5kG5rnDFAhdZKzSClS5J38Y8dZy3tmEgtO3I=
 			</data>
 		</dict>
 		<key>www/styles.css</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			e6t5lFCyXFNjvfFt7QZUHoH+KeJ9XAB09ziKKgVHbCE=
+			j7vJqF30LJhQreIygjIksx19xLtLesAMub2xbrWBUDY=
 			</data>
 		</dict>
 		<key>www/wk-plugin.js</key>

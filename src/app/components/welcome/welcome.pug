@@ -1,0 +1,29 @@
+.flex-1.text-center
+  h1.text-royal Hello & Welcome
+
+  .flex-center.flex-valign-center
+    .pos-rel
+      .pos-abs(
+        style = "bottom:0;right:-20px"
+      )
+        .inline-block(
+          "[style.transform]" = "transformZ"
+        )
+          i.fas.fa-hand-paper.fa-4x.animated.tada.slower
+
+      img.radius-half.border.border-royal.border-5(
+        src="/assets/images/face400.jpg" width="144" height="144"
+      )
+
+  .text-energized
+    p My name is Acker Apple
+    p.text-smx I am a Software Engineer in South Florida
+
+  .flex-center
+    .width-full.flex-1.animated.rubberBand.slower(
+      "[@fadeInOut]" = "1"
+      style="max-width:280px"
+    )
+      audio.width-full(controls)
+        source(src="assets/audio/AppIntro.mp3" type="audio/mpeg")
+        |Your device does not support audio elements.

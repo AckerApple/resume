@@ -1,28 +1,57 @@
 //- https://npm-stat.com/charts.html?author=ackerapple
-.flex-valign-center.flex-center.flex-1
+.flex-center
   div
-    iframe(
-      style="width:100%:height:360px"
-      width="100%"
-      height="360"
-      src="https://www.youtube.com/embed/230G8-TJccI?feature=player_embedded"
-      frameborder="0"
-      allowfullscreen
+    br
+
+    //-
+      video(controls="true")
+        source(src="www.youtube.com/watch?v=230G8-TJccI" type="video/mp4")
+
+
+    div(
+      *ngIf = "watchVideo"
+      "[@fadeInOutUp]" = "1"
     )
-    .flex-wrap.flex-1.flex-center.max-width-900
-      .flex-1.margin-2x.text-2x
-        a.nowrap.flex-valign-center.radius-10.no-a-style.pad-h-2x.pad-v-xs.bg-positive.text-white.text-center.hover-bg-positive.hover-text-white(
+      iframe(
+        style="width:100%:height:360px"
+        width="100%"
+        height="360"
+        src="https://www.youtube.com/embed/230G8-TJccI?autohide=1&playsinline=1&showinfo=0"
+        frameborder="0"
+        allowfullscreen=""
+      )
+    .flex-wrap.flex-1.flex-center.max-width-400.child-margin-v
+      strong.flex1.text-2x
+        a.nowrap.flex-valign-center.no-a-style.pad-h-2x.pad-v-xs.bg-assertive.text-white.text-center.hover-text-white(
+          "(click)" = "watchVideo=!watchVideo"
+        )
+          i.fas.fa-play
+          .flex-1.pad-h 5 Minute Video
+          i.fas.fa-chevron-right
+
+      strong.flex1.text-2x
+        a.nowrap.flex-valign-center.no-a-style.pad-h-2x.pad-v-xs.bg-positive.text-white.text-center.hover-text-white(
           routerLink="highlights"
         )
           i.fas.fa-file
           .flex-1.pad-h Resume Highlights
-          i.fas.fa-file.invisible
+          i.fas.fa-chevron-right
 
-      .flex-1.margin-2x.text-2x
-        a.nowrap.flex-valign-center.radius-10.no-a-style.pad-h-2x.pad-v-xs.bg-positive.text-white.text-center.hover-bg-positive.hover-text-white(
-          href = "https://ackerapple.github.com/resume/assets/Acker Apple Resume.pdf"
+      strong.flex1.text-2x
+        a.nowrap.flex-valign-center.no-a-style.pad-h-2x.pad-v-xs.bg-balanced.text-white.text-center.hover-text-white(
+          href = "pdfUrl"
           target = "_blank"
+          "[share-button]" = "{files:[AppData.wwwBasePath+'/assets/Acker Apple Resume.pdf'], subject:'Software Engineer Acker Apple', message:'Really good looking resume to be reviewed.\n\n'}"
         )
           i.fas.fa-file-pdf
           .flex-1.pad-h Download Resume
-          i.fas.fa-file-pdf.invisible
+          i.fas.fa-chevron-right
+
+      strong.flex1.text-2x
+        a.nowrap.flex-valign-center.no-a-style.pad-h-2x.pad-v-xs.bg-royal.text-white.text-center.hover-text-white(
+          routerLink="demos"
+        )
+          i.fas.fa-cog
+          .flex-1.pad-h Widget Demos
+          i.fas.fa-chevron-right
+    br
