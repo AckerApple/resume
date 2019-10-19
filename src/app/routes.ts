@@ -10,8 +10,8 @@ import { Passion } from './components/passion/Passion.component'
 import { Welcome } from './components/welcome/Welcome.component'
 import { Purpose } from './components/purpose/Purpose.component'
 import { IntroFamily } from './components/intro-family/IntroFamily.component'
-import { Family } from './components/family/Family.component'
 import { Route } from '@angular/router';
+import { route as family } from './family/routes';
 
 export const routes: Route[] = [{
   path:'',
@@ -39,15 +39,7 @@ export const routes: Route[] = [{
     path:'family',
     component:IntroFamily
   }]
-},{
-  path:'family',
-  component:Family,
-  data:{
-    title:'Family Login',
-    icon:'fas fa-users',
-    titleClass:'bg-assertive'
-  }
-},{
+},family,{
   path:'life',
   component:Life,
   data:{

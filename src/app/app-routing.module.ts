@@ -5,9 +5,12 @@ import { CommonModule } from "@angular/common"
 import { FormsModule }   from "@angular/forms"
 
 import { AckModule } from 'ack-angular/AckModule'
+import { AckRouterModule } from "ack-angular/AckRouterModule"
 import { AckFxModule } from 'ack-angular-fx'
 import { AgmCoreModule } from "@agm/core"
 import { AgmOverlays } from "agm-overlays"
+import { ngfModule } from "angular-file"
+
 const agmRoot = AgmCoreModule.forRoot({
   apiKey: "AIzaSyBnYAuCBw79sDvvqAWkZqz9OKOcvyIJeyQ"
 })
@@ -26,7 +29,9 @@ export const routeConfig = {
     CommonModule,
     FormsModule,
     AckModule.forRoot(),
+    AckRouterModule,
     AckFxModule,
+    ngfModule,
     WebCamModule,
     agmRoot,
     AgmOverlays,

@@ -4,6 +4,11 @@ fx-tracker(
   "[orderArray]" = "['welcome','purpose','family']"
 )
 
+route-reporter(
+  "(routeChange)"="makeNextLink()"
+)
+
+
 table.height-full.width-full(
   cellPadding="0" cellSpacing="0" border="0"
   "(swipeleft)" = "fx.orderIndex==fx.orderArray.length-1 && navTo('../') || navTo(fx.orderArray[fx.orderIndex+1])"
@@ -20,9 +25,7 @@ table.height-full.width-full(
       )
         router-outlet(#outlet="outlet")
 
-    tr(
-      "[class.invisible]" = "fx.inFx"
-    )
+    tr
       td
         .child-pad-h-xs.flex-valign-center.flex-center
           a.fa-circle.no-a-style(
@@ -39,7 +42,7 @@ table.height-full.width-full(
           )
           .pad-top-xxs
             a.no-a-style.fas.fa-caret-right.fa-lg(
-              routerLink = "../"
+              "[routerLink]" = "nextLink"
             )
         .text-xxs.opacity-half.text-center
           strong (swipe to navigate)

@@ -1,0 +1,80 @@
+ack-modal(
+  *ngIf="cameraModal"
+)
+  .pad.bg-grey-2x.radius-10
+    a.pos-rel.block.overflow-hidden.height-200.width-200(
+      *ngIf = "!takePhoto.supported"
+      "(take-photo)" = "url=$event.url;osFilePath=$event.osFilePath"
+    )
+      //-"(success)" = "url=webcam.getBase64()"
+      ack-webcam.pos-abs.block(
+        #webcam = ""
+        "(click)" = "processCamPhoto(webcam);cameraModal=false"
+        "style" = "top:-17%;left:-17%;"
+        "[style.height.px]" = "200*1.37"
+        "[style.width.px]" = "200*1.37"
+      )
+
+    .pad
+      a.text-white.bg-positive.block.pad-sm.radius-5.text-center(
+        #takePhoto = "TakePhoto"
+        "(take-photo)" = "url=$event.url;osFilePath=$event.osFilePath"
+        "(click)" = "takePhoto.supported || (processCamPhoto(webcam) || cameraModal=false)"
+      )
+        i.fas.fa-camera
+
+ack-modal(
+  *ngIf="modal"
+  "(close)" = "modal = null"
+)
+  img.width-full(
+    "[src]"="srcBase + modal.photo.uid + '.'+modal.photo.fileExt | ngfbStorageUrl | async"
+  )
+  ng-container(*ngIf="modal.allow.delete")
+    a.pad.bg-assertive.block.text-white.text-center(
+      "(click)" = "delete.emit( modal.photo );modal = null"
+    ) delete
+
+//-ensure array display only updates and does not reset
+ack-array(
+  #a = "AckArray"
+  "[array$]" = "photos$"
+  "[idKeys]" = "['uid']"
+  merge = "true"
+)
+
+.flex-center.flex-wrap.child-margin-sm
+  a.text-center.bg-white(
+    *ngFor="let item of a.array"
+    "(click)" = "view.emit(modal={photo:item,allow:{delete:false}})"
+  )
+    .pad
+      .height-100.overflow-hidden.flex-valign-center
+        img.width-100(
+          "[src]"="srcBase+item.uid+'-thumbs/200.'+item.fileExt | ngfbStorageUrl | async"
+        )
+    
+    .text-dark.text-xs.pad-h
+      .max-width-100.text-overflow
+        |{{item.addedByUser?.name || '?'}}
+
+  a.pad.text-center.bg-balanced.flex-valign-center.flex-center.width-100(
+    ngfDrop      = ""
+    multiple = "yes"
+    "(filesChange)" = "addFiles.emit($event)"
+    selectable   = "1"
+    accept       = "image/*"
+    maxSize      = "14000000"
+    "[ngClass]"              = "{'bg-energized':validFileHover}"
+    "[class.bg-assertive]"   = "invalidFileHover"
+    "[(validDrag)]"          = "validFileHover"
+    "[(invalidDrag)]"        = "invalidFileHover"
+    "[(lastInvalids)]"       = "lastInvalids"
+    "[(lastBaseUrl)]"        = "tempIconDataUrl"
+  )
+    i.fas.fa-file-image.fa-2x
+
+  a.flex-valign-center.flex-center.bg-grey.text-center.bg-positive.pad.width-100(
+    "(click)" = "cameraModal = true"
+  )
+    i.fas.fa-camera.fa-2x

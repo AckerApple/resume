@@ -1,0 +1,85 @@
+(PDF resume available, this format used due to upload restrictions)
+
+
+Acker Dawn Apple
+Coconut Creek, FL 33066
+(561) 239-2967
+
+me@AckerApple.com
+
+OBJECTIVE:
+To apply my advanced knowledge and experience in full stack software engineering at a stimulating and rewarding organization. To work with a team where my skills can be effectively utilized to improve the applications, operations and efficiency of a company.
+
+PASSION:
+I maintain popular open source code packages for several different programming platforms like NPM. My code repositories are intended for use in MEAN and Full Stack development environments. My publicly available code receives free quality assurance by adopters whom make pull requests and also report issues. This has led to communications and collaborations with other advanced developers from around the world.
+
+EXPERIENCE:
+06/2016 – 05/2019	Caring on Demand	West Palm Beach, FL
+- Software Engineer
+Worked with a team of programmers of all varying skills and abilities. I spent my early years of employment creating an employee on boarding system using full stack technologies like NodeJS for API, AWS for document storage, Mongo DB for suggestive searches, MySQL for data storage, Java for PDF filling, and Angular for front end app display. Spent the rest of my employment developing desktop and mobile apps for an on demand care request system. Duties included connecting to AWS and Firebase cloud services for real-time data and notifications as well as using Angular, Cordova, Web Workers, and other mainstream techniques to produce App Store ready hybrid apps that were to be sold to other care facilities by our marketing team.
+Highlights of Achievements:
+- I was responsible for training two co-workers in Angular and NodeJs.
+- Implemented Stripe for payment processing
+- Utilized open source architectures to run reliable consistent applications across all major devices and web browsers.
+- Achieved high performance, extremely quick loading times, and smooth animations by utilizing web workers, route lazy loading, and ahead-of-time compilation.
+
+
+02/2013 – 06/2016	Children of America	Delray Beach, FL
+- Software Engineer
+Lead software engineer of child care company’s daily operations software and mobile platforms. Duties included connecting third party software like Sales Force, Twilio, and ProCare with internal MsSQL databases through NodeJS connections. Created camera monitoring system including a mobile app for parents and staff to connect to classroom cameras. Created an in classroom teacher app for child care tracking that included offline storage using Localforage, MsSQL as database, NodesJs as API, and Angular for app display.
+Highlight of Achievements:
+- Wrote ACH batch process for payment transactions to be processed through a FirstData NACHA file protocol.
+- Hired, trained, and worked with younger brother
+
+
+10/2011 – 01/2013	Sales Wanted / Rank Number 1	Ft. Lauderdale, FL
+- Lead Programmer & Programming Manager
+Lead for programming department with responsibilities to over see all developments of daily sales operations software. Managed and implemented third-party vendor’s API technologies such as: Twilio Phone Number Routing; Multi-listings SEO Services; Google Business Apps & Maps; and more. Provided administrative interfaces, reporting, exporting, facilitated mass imports of millions of rows and more.
+
+
+- Additional 18 years past work history available upon request -
+
+
+QUALIFICATIONS:
+Extremely experienced with software development cycles utilizing Test Driven Development and Behavioral Driven Development. I am highly detail oriented; analytical; well documenting and have a willingness to share my knowledge of AWS/Firebase/Cloud services, NoSQL development, and expertise in Angular.
+
+
+Specific Technical Knowledge Includes, but not limited to:
+
+NodeJs
+Packages Used: Express, Sequelize, Loopback, Weback, Pug/Jade/Handle bars
+Unit Testing: Mocha, Chia, Jest, Karma, Jasmine
+Packages Created: angular-file, agm-overlays, stripe-angular, ack-angular-fx, path-reader, pdf-cli-wrap, ack-x… and more…
+Database Technologies:
+MS SQL, MySQL, Oracle, and Postgres
+MongoDB
+Firebase Firestore
+Front-end Technologies:
+Angular
+Typescript
+HTML, CSS, SASS, Javascript
+Web Workers
+Cordova, Ionic, PhoneGap 
+Service Workers
+Third Party Software:
+Sales Force, Twilio, Firebase, Tableau, Github, NPM, AWS
+Payment Gateways: Stripe, FirstData, authorize.net
+GIT; Subversion (SVN); Source Safe; Concurrent Versioning System (CVS)
+
+ACTIVITIES & ACHIEVEMENTS:
+
+Author of 25 packages hosted on NpmJs
+https://www.npmjs.com/~ackerapple
+Host of 37 repositories hosted on GitHub
+https://github.com/AckerApple?tab=repositories
+
+EDUCATION:
+2004 - 2006		Long Isolation Education				Orlando, FL
+			Self taught ColdFusion, MS SQL, and web architectures
+Improved a family members merchant terminal business by implementing newly learned server-side and client-side services.
+
+August 2001		Coral Springs High School			Coral Springs, FL
+			Specialized in computer technologies.
+
+
+REFERENCES:          Available upon request.

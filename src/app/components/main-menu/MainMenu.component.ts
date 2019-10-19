@@ -25,12 +25,10 @@ export class MainMenu {
   ngOnInit(){
     this.AppData.load
     .then(()=>{
-      setTimeout(()=>{
-        if( !this.AppData.offline.completedIntroAt ){
-          this.AppData.completedIntro()
-        }
-        this.delay2=true
-      }, 2000)
+      if( !this.AppData.offline.completedIntroAt ){
+        this.AppData.completedIntro()
+      }
+      this.delay2=true
     })
   }
 

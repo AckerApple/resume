@@ -1,17 +1,17 @@
 .flex-wrap.flex-center.child-pad-sm
   .flex-1(
-    *ngIf="base64"
+    *ngIf="url"
     "[@fadeInOutUp]" = "1"
   )
     .flex-center
       .height-200.width-200.radius-half(
-        "[style.background-image]" = "'url('+base64+')' | safeStyle"
+        "[style.background-image]" = "'url('+url+')' | safeStyle"
         style = "background-repeat:no-repeat;background-position:center;background-size:cover"
       )
 
     .flex-wrap.pad
       a.flex-1.text-white.bg-assertive.pad-sm.radius-5.text-center(
-        "(click)" = "base64 = null"
+        "(click)" = "url = null"
       )
         i.fas.fa-trash
       
@@ -25,17 +25,21 @@
     .flex-center
       a.pos-rel.block.overflow-hidden.height-200.width-200.radius-half(
         *ngIf = "showPreview"
-        "(click)" = "takePhoto(webcam)"
+        "(take-photo)" = "url=$event.url;osFilePath=$event.osFilePath"
       )
+        //-"(success)" = "url=webcam.getBase64()"
         ack-webcam.pos-abs.block(
-          "[(ref)]" = "webcam"
+          "#webcam" = ""
+          "(click)" = "processCamPhoto(webcam)"
           "style" = "top:-17%;left:-17%;"
-            "[style.height.px]" = "200*1.37"
-            "[style.width.px]" = "200*1.37"
+          "[style.height.px]" = "200*1.37"
+          "[style.width.px]" = "200*1.37"
         )
 
     .pad
       a.text-white.bg-positive.block.pad-sm.radius-5.text-center(
-        "(click)" = "takePhoto(webcam)"
+        #takePhoto = "TakePhoto"
+        "(take-photo)" = "url=$event.url;osFilePath=$event.osFilePath"
+        "(click)" = "takePhoto.supported || processCamPhoto(webcam)"
       )
         i.fas.fa-camera

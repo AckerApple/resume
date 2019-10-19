@@ -9,6 +9,7 @@ import { animations } from "ack-angular-fx"
   animations:animations
 }) export class Intro {
   page:number = 0
+  nextLink:string = 'purpose'
 
   constructor(
     public AppData:AppData,
@@ -19,5 +20,24 @@ import { animations } from "ack-angular-fx"
     this.AppData.navTo(url, this.ActivatedRoute)
     return true
   }
-  
+
+  makeNextLink(){
+    const steps = ['welcome','purpose','family']
+    const firstChild = this.ActivatedRoute.firstChild
+
+    if( !firstChild ){
+      this.nextLink = "/"
+      return
+    }
+
+    const rc = firstChild.routeConfig
+    const current = steps.indexOf(rc.path.toLowerCase())
+
+    if( current == steps.length-1 ){
+      this.nextLink = "/"
+      return
+    }
+
+    this.nextLink = steps[current + 1]
+  } 
 }

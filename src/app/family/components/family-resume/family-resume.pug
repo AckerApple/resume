@@ -1,0 +1,7 @@
+photo-interface(
+  "[srcBase]" = "'resume/photos/'"
+  "[photos$]" = "photos$"
+  "(delete)" = "FamilyApp.Data.ResumePhotos.deletePhoto($event)"
+  "(addFiles)" = "FamilyApp.Data.ResumePhotos.sendPhotos( $event )"
+  "(view)" = "$event.allow.delete = true"
+)

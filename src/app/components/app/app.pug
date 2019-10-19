@@ -46,13 +46,17 @@ table.height-full.width-full.bg-fade(
 
           .flex-valign-center.pad-right.pad-left.height-50
             a.pos-abs(
-              *ngIf="router.activated?.routeConfig?.path"
+              *ngIf="router.activated?.routeConfig"
               "[routerLink]"="AppData.RouteHistory.back || '../'"
             )
               i.fas.fa-chevron-left.fa-lg.text-white
             .flex-1.text-center.pad-h-3x.text-3x.text-overflow
               i("[ngClass]"="router.activated?.routeConfig?.data?.icon")
               |&nbsp;{{ router.activated?.routeConfig?.data?.title }}
+            ng-container(*ngFor="let directives of AppData.headerTemplates.directives")
+              ng-container(*ngFor="let append of directives.appends")
+                .flex
+                  ng-container(*ngTemplateOutlet="append")
 
         .height-50
     fx-tracker(

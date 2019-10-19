@@ -1,0 +1,152 @@
+ack-modal(
+  *ngIf="shows.showForgotPw"
+  "(close)" = "shows.showForgotPw=false"
+  backgroundColor = "rgba(3,3,3,.7)"
+)
+  .pad.radius-5.max-width-500(
+    style="border:1px rgba(3,3,3,.7) solid;background-color:#EEE"
+  )
+    h2 Password Retrieval
+    .text-sm.text-justify
+      p This is a very private sharing app. Acker Apple distributes and maintains unique passwords. You cannot choose a password, one must be given to you.
+      p If you are family, then contact Acker for a new password or if you never received one.
+    h2 Need Help?
+    .text-sm.text-justify
+      p Please contact Acker right away
+      p
+        strong Phone:&nbsp;
+        a.no-a-style(
+          href="tel:5612392967"
+        )
+          span.underline (561) 239-2967
+      
+      p
+        strong Email:&nbsp;
+        a.no-a-style(
+          "[share-button]"="{}"
+          type="shareViaEmail"
+        )
+          span.underline me@ackerapple.com
+
+ack-modal(
+  *ngIf="shows.showReportIssue"
+  "(close)" = "shows.showReportIssue=false"
+  backgroundColor = "rgba(3,3,3,.7)"
+)
+  .pad.radius-5.max-width-500(
+    style="border:1px rgba(3,3,3,.7) solid;background-color:#EEE"
+  )
+    h2 Need Help?
+    .text-sm.text-justify
+      p Please contact Acker right away
+      p
+        strong Phone:&nbsp;
+        a.no-a-style(
+          href="tel:5612392967"
+        )
+          span.underline (561) 239-2967
+      
+      p
+        strong Email:&nbsp;
+        a.no-a-style(
+          "[share-button]"="{}"
+          type="shareViaEmail"
+        )
+          span.underline me@ackerapple.com
+
+ack-modal(
+  *ngIf="shows.showMoreInfo"
+  "(close)" = "shows.showMoreInfo=false"
+  backgroundColor = "rgba(3,3,3,.7)"
+)
+  .pad.radius-5.max-width-500(
+    style="border:1px rgba(3,3,3,.7) solid;background-color:#EEE"
+  )
+    family-more-info
+
+.height-full.flex-valign-center.flex-center
+  .width-full.max-width-400
+    .text-center
+      h2.margin-top-0 Our Family Our Cloud
+      p Login below
+    br
+
+    form(
+      "(submit)"="login()"
+    )
+      .form-group(
+        "[class.has-error]" = "submitCount && !vals.email"
+        "[shakeOn]" = "!vals.email && submitCount"
+      )
+        label.pad-left
+          i.fas.fa-envelope
+          strong
+            |&nbsp;Email
+        input.form-control(
+          type="email" required name="email"
+          "[(ngModel)]"="FamilyApp.AppData.offline.user.email"
+          "(keyup)"="reval()"
+        )
+      br
+      .form-group(
+        "[class.has-error]" = "submitCount && !vals.password"
+        "[shakeOn]" = "!vals.password && submitCount"
+      )
+        label.pad-left
+          i.fas.fa-key
+          strong
+            |&nbsp;Password
+        input.form-control(
+          type="password" required name="password"
+          "[(ngModel)]"="user.password"
+          "(keyup)"="reval()"
+        )
+
+      .text-assertive.text-center(
+        *ngIf="rejectCount"
+        "[shakeOn]" = "rejectCount"
+        "[@fadeInOutUp]" = "1"
+      )
+        i.fas.fa-exclamation-triangle
+        |&nbsp;invalid login. try again
+      br
+
+      button.width-full.border-0.bg-assertive.pad.block.text-white(
+        type="submit"
+      )
+        .fa.fa-spinner.fa-spin.fa-lg(
+          *ngIf="loadCount;else goLabel"
+        )
+        ng-template(#goLabel="")
+          strong GO
+      
+      .text-center
+        br
+        a.text-white.text-underline(
+          "(click)" = "googleSignIn()"
+        )
+          img(
+            src="/assets/images/btn_google_signin_dark_focus_web.png"
+          )
+    
+    .pad.text-center
+      .flex-apart
+        a.text-sm.underline.opacity-80(
+          "(click)" = "shows.showForgotPw=true"
+        )
+          |forgot password
+        a.text-sm.underline.opacity-80(
+          "(click)" = "shows.showMoreInfo=true"
+        )
+          |more information
+      .flex-apart
+        a.text-white.text-sm.underline.opacity-80(
+          href="https://ackerapple.com/assets/docs/app-privacy.txt"
+        )
+          |privacy policy
+
+        a.text-sm.underline.opacity-80(
+          "(click)" = "shows.showReportIssue=true"
+        )
+          |report issue
+

@@ -44,7 +44,7 @@
                 },
                 {
                   "replace": "src/runtime.json",
-                  "with": "src/environments/runtime/runtime.prod.json"
+                  "with": "src/environments/runtime/runtime.dev.json"
                 }
               ]
             },
@@ -60,7 +60,7 @@
                 },
                 {
                   "replace": "src/runtime.json",
-                  "with": "src/environments/runtime/runtime.prod.json"
+                  "with": "src/environments/runtime/runtime.dev.json"
                 }
               ],
               "optimization": true,

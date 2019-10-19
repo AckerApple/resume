@@ -173,11 +173,11 @@ ack-modal(
           "(close)" = "confirmIntro=false"
           backgroundColor = "rgba(3,3,3,.7)"
         )
-          .pad.radius-5(
+          .pad.radius-5.max-width-500(
             style="border:1px rgba(3,3,3,.7) solid;background-color:#EEE"
           )
-            |Go back to the intro screens?
-            p You have viewed this content previously #[strong {{ AppData.offline.completedIntroAt | aDate : 'fromNow' }}] on {{ AppData.offline.completedIntroAt | date : 'shortDate' }} at {{ AppData.offline.completedIntroAt | date : 'shortTime' }}
+            h3 Go back to introductory screens?
+            p You originally viewed this content #[strong {{ AppData.offline.completedIntroAt | aDate : 'fromNow' }}] on {{ AppData.offline.completedIntroAt | date : 'shortDate' }} at {{ AppData.offline.completedIntroAt | date : 'shortTime' }}
             a.no-a-style.block.pad.bg-positive.text-center.text-white(
               routerLink = "/intro"
               "(click)" = "confirmIntro=false"

@@ -1,8 +1,11 @@
-import { Component } from '@angular/core'
+import {
+  ViewChild, TemplateRef, ElementRef,
+  Component } from '@angular/core'
 import { string } from './user-media-demo.template'
 import { animations } from 'ack-angular-fx'
+import { WebCamComponent } from 'ack-angular-webcam'
 
-declare var window:any
+//declare var window:any
 //declare var cordova:any
 declare var navigator:any
 
@@ -11,44 +14,14 @@ declare var navigator:any
   animations:animations,
   template: string
 }) export class UserMediaDemo {
-  webcam:any
+  @ViewChild( WebCamComponent ) webcam:TemplateRef<ElementRef>
+  //webcam:any
   showPreview:boolean = navigator.camera ? false : true
 
-  base64:string
+  url:string
   osFilePath:string
 
-  ngOnDestroy(){
-    if( navigator.camera ){
-      navigator.camera.cleanup()
-    }
-  }
-
-  setBase( base ){
-      this.osFilePath = base
-      base = window.Ionic.WebView.convertFileSrc(base)
-      this.base64=base        
-  }
-
-  takePhoto( webcam ){
-    if( navigator.camera ){
-      return navigator.camera.getPicture(
-        base=>{
-          setTimeout(()=>{
-            this.setBase(base)
-          }, 0)//cause angular to review page changes with timeout finish
-        },
-        err=>{
-          console.error("camera error",err)
-        },{
-          quality: 50,
-          cameraDirection: 1,//SELFIE
-          correctOrientation:true,
-          destinationType: navigator.camera.DestinationType.FILE_URI
-        }
-      )
-    }
-
-    return webcam.getBase64()
-    .then( base=>this.base64=base )
+  processCamPhoto( webcam ){
+    webcam.getBase64().then(url=>this.url=url)
   }
 }

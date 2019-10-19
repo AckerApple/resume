@@ -1,4 +1,7 @@
+import { declarations as familyDecs } from './family/declarations'
+
 //import { AppComponent } from './components/app/app.component';
+import { HeaderTemplates } from './components/header-templates/HeaderTemplates.directive';
 import { MainMenu } from './components/main-menu/MainMenu.component';
 import { Resume } from './components/resume/resume.component';
 import { ResumeHighlights } from './components/resume-highlights/ResumeHighlights.component';
@@ -18,15 +21,19 @@ import { DeviceLocation } from './components/device-location/DeviceLocation.comp
 import { SocialSharing } from './components/social-sharing/SocialSharing.component';
 import { ShareButton } from './components/share-button/ShareButton.directive';
 
-import { Family } from './components/family/Family.component';
-import { FamilyLogin } from './components/family-login/FamilyLogin.component';
-
 import { Intro } from './components/intro/Intro.component';
 import { IntroFamily } from './components/intro-family/IntroFamily.component';
 import { Welcome } from './components/welcome/Welcome.component';
 import { Purpose } from './components/purpose/Purpose.component';
 
+import { TakePhoto } from './components/take-photo/TakePhoto.directive';
+import { AngularFirestoreStorageUrl } from './storageUrl.pipe'
+
 export const declarations = [
+  AngularFirestoreStorageUrl,
+
+  ...familyDecs,
+  HeaderTemplates,
   Demos,
   AckMeterDisplay,
   AckMeter,
@@ -42,14 +49,12 @@ export const declarations = [
   ComingSoon,
   MainMenu,
   Life,
-
-  Family,
-  FamilyLogin,
   
   Intro,
   Welcome,
   Purpose,
   IntroFamily,
   //GotoTop,
-  Resume
+  Resume,
+  TakePhoto
 ]

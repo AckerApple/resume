@@ -6,4 +6,5 @@ import { animations } from "ack-angular-fx"
   template: string,
   animations:animations
 }) export class IntroFamily {
+  shows:{[index:string]:boolean} = {}
 }

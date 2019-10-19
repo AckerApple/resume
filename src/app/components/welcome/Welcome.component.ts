@@ -13,7 +13,6 @@ import { animations } from "ack-angular-fx"
   gyroValues:any = {}
 
   ngOnInit(){
-console.log(0)
     this.gyroWatcher = window.addEventListener("deviceorientation", event=>this.handleOrientation(event), true)
   }
 
@@ -35,7 +34,6 @@ console.log(0)
   }
 
   handleOrientation( event:DeviceOrientationEvent ){
-console.log("rotate")
     this.gyroValues = {
       absolute : event.absolute,//?
       alpha    : event.alpha,//z - left and right

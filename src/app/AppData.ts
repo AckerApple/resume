@@ -2,13 +2,8 @@ import { Injectable } from '@angular/core';
 import { AckOffline, AckApi } from 'ack-angular/modules/offline';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RouteHistory } from 'ack-angular/modules/router/RouteHistory.provider';
-
-interface user{
-  user:string
-  email:string
-  name:string
-  token:string
-}
+import { headerTemplates } from './headerTemplates'
+import { user } from './types'
 
 interface offlineData{
   user:user
@@ -34,6 +29,8 @@ export class AppData {
   loadOffline:Promise<any> = Promise.resolve()
   load:Promise<any> = Promise.resolve()
   loaded:boolean
+  
+  headerTemplates = headerTemplates
 
   constructor(
     public AckApi:AckApi,
@@ -42,8 +39,6 @@ export class AppData {
     public Router:Router
   ){
     this.fireLoad()
-
-    this.AckApi.config.baseUrl = "https://ackerapple.com/functions"
 
     document.addEventListener("deviceready", ()=>{
       window.Ionic.WebView.getServerBasePath(r=>{
@@ -59,6 +54,13 @@ export class AppData {
     .then( ()=>{
       const icon = document.getElementById('mainLoadIcon')
       icon.parentNode.removeChild(icon)
+
+      if( this.environment.env==='production' ){
+        this.AckApi.config.baseUrl = "https://ackerapple.com/functions"
+      }else{
+        this.AckApi.config.baseUrl = "http://localhost:5000/family-api"
+      }
+
       this.loaded=true
     })
   }
@@ -115,6 +117,16 @@ export class AppData {
   applyOfflineConfig( data:offlineData ){
     Object.assign(this.offline, data)
     this.offline.user = this.offline.user || <user>{}
+
+/*
+    const user = this.offline.user
+    if( user ){
+      const security = this.offline.user.security
+      if( security ){
+        this.AckApi.config.$http.headers['Authorization'] = security.token
+      }
+    }
+*/
   }
 
   completedIntro(){
@@ -134,7 +146,7 @@ export class AppData {
   }
 
   clearSession(){
-    this.offline.user.token
+    //delete this.offline.user.security
     return this.AckOffline.clear("t2c")
   }
 }
