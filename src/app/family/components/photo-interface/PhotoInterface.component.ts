@@ -26,7 +26,7 @@ export interface viewConfig{
   @Output() view:EventEmitter<viewConfig> = new EventEmitter()
 
   cameraModal:any  
-  @ViewChild( WebCamComponent ) webcam:TemplateRef<ElementRef>
+  @ViewChild( WebCamComponent, { static: false } ) webcam:TemplateRef<ElementRef>
 
   processCamPhoto( webcam ){
 console.log("webcam",webcam)

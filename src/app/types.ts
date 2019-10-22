@@ -6,15 +6,8 @@ export interface photo{
   addedBy  : string
 }
 
-export interface user{
-  uid       : string
-  email     : string
-  name      : string
-  lastLogin?: number
-  photoUrl? : string
-  trusted?  : boolean
-  //security? : userSecurity
-}
+export { user } from "ack-angular-fire"
+
 /*
 export interface userSecurity{
   id     : string

@@ -1,19 +1,19 @@
 import { log } from "../log"
 
-//import { Subscription } from 'rxjs/internal/Subscription'
+import { Subscription } from 'rxjs/internal/Subscription'
 import { Observable } from 'rxjs/internal/Observable'
 import { Injectable } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AppData } from '../AppData'
 import { FamilyData } from './FamilyData'
 //import { passhash } from './passhash'
-import {
-  user//, userSecurity
-} from '../types'
+import { user } from 'ack-angular-fire'
 import {
   //AngularFirestoreCollection,
   AngularFirestore
 } from '@angular/fire/firestore';
+import { User } from 'firebase';
+import { FireUser } from "ack-angular-fire"
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireStorage } from '@angular/fire/storage';
 
@@ -32,7 +32,10 @@ export class FamilyApp {
   Data:FamilyData
   user:user
 
+  subs: Subscription = new Subscription()
+
   constructor(
+    public FireUser:FireUser,
     public storage:AngularFireStorage,
     public AngularFireAuth:AngularFireAuth,
     public db: AngularFirestore,
@@ -51,21 +54,26 @@ export class FamilyApp {
     this.Data = new FamilyData(this)
   }
 
+  ngOnDestroy(){
+    this.subs.unsubscribe();
+  }
+
   monitorFirebase():Promise<void>{
     return new Promise((res,rej)=>{
-      this.AngularFireAuth.authState.subscribe((user:likeUser)=>{
-        //this.AppData.offline.user.security = <userSecurity>{}      
-        if( !user ){
+      this.subs.add(
+        this.FireUser.login.subscribe(user=>{
+          this.setAuthUser(user).subscribe(()=>res())
+        })
+      ).add(
+        this.FireUser.logout.subscribe(user=>{
           this.clearLocalUser()
-          return res()
-        }
-
-        this.setAuthUser(user).subscribe(()=>res())
-      })
+          res()
+        })
+      )
     })
   }
 
-  setAuthUser( user:likeUser ):Observable<any>{
+  setAuthUser( user:User ):Observable<any>{
     const devEmails = ['me@ackerapple.com','acker.dawn.apple@gmail.com']
     if( devEmails.indexOf(user.email)>=0 ){
       this.debug()
@@ -73,10 +81,9 @@ export class FamilyApp {
     }
 
     this.user = {
-      name:user.displayName || user.name,
+      name:user.displayName,// || user.name,
       email:user.email,
       uid:user.uid,
-      //trusted:user.trusted,
       photoUrl: getUserPhotoUrl( user )
     }
     const offline = this.AppData.offline
@@ -154,13 +161,6 @@ export class FamilyApp {
 
   gotoMain(){
     this.Router.navigate(['./'],{relativeTo:this.ActivatedRoute})
-  }
-
-  loginUser(email:string, password:string):Promise<any>{
-    const offline = this.AppData.offline
-    offline.user.email = email
-    this.AppData.save()
-    return this.AngularFireAuth.auth.signInWithEmailAndPassword(email, password)
   }
 }
 

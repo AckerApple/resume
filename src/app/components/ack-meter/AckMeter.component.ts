@@ -9,6 +9,6 @@ import {
 }) export class AckMeter{
   @Input() percent:number
   @Input() meterClass:any
-  @ViewChild(TemplateRef) content:TemplateRef<ElementRef>
-  @ContentChild('meterLabel') meterLabel:TemplateRef<ElementRef>
+  @ViewChild(TemplateRef, { static: false }) content:TemplateRef<ElementRef>
+  @ContentChild('meterLabel', {static: false}) meterLabel:TemplateRef<ElementRef>
 }

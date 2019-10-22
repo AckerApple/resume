@@ -1,14 +1,16 @@
+// TIP: Another module is here: src/app/app-routing.module.ts
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgxPageScrollModule } from "ngx-page-scroll"
 
+import { Module as AckAngularFire } from 'ack-angular-fire';
 import { AckFxModule } from 'ack-angular-fx';
 import { AckModule } from 'ack-angular/AckModule';
 import { AckOfflineModule } from 'ack-angular/modules/offline/module';
-import { AckRouterModule } from "ack-angular/AckRouterModule"
-import { RouteHistory } from 'ack-angular/modules/router/RouteHistory.provider';
+import { AckRouterModule } from "ack-angular/modules/router/AckRouterModule"
 
 import { hammerProvider } from './HammerConfig'
 import { AppData } from "./AppData"
@@ -31,8 +33,9 @@ import { AngularFireStorageModule } from "@angular/fire/storage";
     BrowserModule,
     BrowserAnimationsModule,
     NgxPageScrollModule,
-    AckRouterModule,
+    AckRouterModule.forRoot(),
     FormsModule,
+    AckAngularFire,
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig,'ackerapple'),
     AngularFireAuthModule,
@@ -44,7 +47,6 @@ import { AngularFireStorageModule } from "@angular/fire/storage";
   ],
   providers: [
     AppData,
-    RouteHistory,
     hammerProvider,
   ],
   bootstrap: [ AppComponent ]

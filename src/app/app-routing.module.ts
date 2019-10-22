@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router'
 import { CommonModule } from "@angular/common"
 import { FormsModule }   from "@angular/forms"
 
+import { Module as AckAngularFire } from 'ack-angular-fire';
 import { AckModule } from 'ack-angular/AckModule'
 import { AckRouterModule } from "ack-angular/AckRouterModule"
 import { AckFxModule } from 'ack-angular-fx'
@@ -29,6 +30,7 @@ export const routeConfig = {
     CommonModule,
     FormsModule,
     AckModule.forRoot(),
+    AckAngularFire,
     AckRouterModule,
     AckFxModule,
     ngfModule,

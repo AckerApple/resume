@@ -71,63 +71,10 @@ ack-modal(
       p Login below
     br
 
-    form(
-      "(submit)"="login()"
+    ack-fire-login-form(
+      "[(email)]" = "FamilyApp.AppData.offline.user.email"
+      "(success)" = "onLogin()"
     )
-      .form-group(
-        "[class.has-error]" = "submitCount && !vals.email"
-        "[shakeOn]" = "!vals.email && submitCount"
-      )
-        label.pad-left
-          i.fas.fa-envelope
-          strong
-            |&nbsp;Email
-        input.form-control(
-          type="email" required name="email"
-          "[(ngModel)]"="FamilyApp.AppData.offline.user.email"
-          "(keyup)"="reval()"
-        )
-      br
-      .form-group(
-        "[class.has-error]" = "submitCount && !vals.password"
-        "[shakeOn]" = "!vals.password && submitCount"
-      )
-        label.pad-left
-          i.fas.fa-key
-          strong
-            |&nbsp;Password
-        input.form-control(
-          type="password" required name="password"
-          "[(ngModel)]"="user.password"
-          "(keyup)"="reval()"
-        )
-
-      .text-assertive.text-center(
-        *ngIf="rejectCount"
-        "[shakeOn]" = "rejectCount"
-        "[@fadeInOutUp]" = "1"
-      )
-        i.fas.fa-exclamation-triangle
-        |&nbsp;invalid login. try again
-      br
-
-      button.width-full.border-0.bg-assertive.pad.block.text-white(
-        type="submit"
-      )
-        .fa.fa-spinner.fa-spin.fa-lg(
-          *ngIf="loadCount;else goLabel"
-        )
-        ng-template(#goLabel="")
-          strong GO
-      
-      .text-center
-        br
-        a.text-white.text-underline(
-          "(click)" = "googleSignIn()"
-        )
-          img(
-            src="/assets/images/btn_google_signin_dark_focus_web.png"
-          )
     
     .pad.text-center
       .flex-apart

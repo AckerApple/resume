@@ -40,6 +40,7 @@ export class AppData {
   ){
     this.fireLoad()
 
+    // cordova only
     document.addEventListener("deviceready", ()=>{
       window.Ionic.WebView.getServerBasePath(r=>{
         this.wwwBasePath = r

@@ -27,7 +27,13 @@ table.height-full.width-full(
 
     tr
       td
-        .child-pad-h-xs.flex-valign-center.flex-center
+        .text-center
+          div
+            a.inline-block.bg-stable.pad-xs.text-dark.radius-5.pad-h-4x.bolder("(click)"="navTo(fx.orderArray[fx.orderIndex+1])")
+              |CONTINUE&nbsp;&nbsp;
+              span.fas.fa-chevron-circle-right
+          br
+        .child-pad-h-sm.flex-valign-center.flex-center
           a.fa-circle.no-a-style(
             routerLink = "welcome"
             "[ngClass]" = "ActivatedRoute.firstChild.routeConfig.path==='welcome' ? 'far' : 'fas'"
@@ -44,7 +50,7 @@ table.height-full.width-full(
             a.no-a-style.fas.fa-caret-right.fa-lg(
               "[routerLink]" = "nextLink"
             )
-        .text-xxs.opacity-half.text-center
+        .text-xxs.opacity-half.text-center.pad-top-xs
           strong (swipe to navigate)
           br
           br

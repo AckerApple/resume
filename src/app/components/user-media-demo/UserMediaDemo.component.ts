@@ -14,7 +14,7 @@ declare var navigator:any
   animations:animations,
   template: string
 }) export class UserMediaDemo {
-  @ViewChild( WebCamComponent ) webcam:TemplateRef<ElementRef>
+  @ViewChild( WebCamComponent, { static: false } ) webcam:TemplateRef<ElementRef>
   //webcam:any
   showPreview:boolean = navigator.camera ? false : true
 
