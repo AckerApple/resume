@@ -12,6 +12,10 @@
         "function": "familyApi"
       },
       {
+        "source": "/pingolf/**",
+        "destination": "/pingolf/index.html"
+      },
+      {
         "source": "**",
         "destination": "/index.html"
       }
