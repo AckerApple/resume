@@ -18,6 +18,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './components/app/app.component';
 import { GotoTop } from './components/goto-top/GotoTop.directive';
 
+// npm install firebase @angular/fire
 import { firebaseConfig } from './firebaseConfig'
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -37,10 +38,13 @@ import { AngularFireStorageModule } from "@angular/fire/storage";
     FormsModule,
     AckAngularFire,
     AppRoutingModule,
+    
+    // firebase
     AngularFireModule.initializeApp(firebaseConfig,'ackerapple'),
     AngularFireAuthModule,
     AngularFirestoreModule.enablePersistence(),
     AngularFireStorageModule,
+    
     AckModule.forRoot(),
     AckOfflineModule.forRoot(),
     AckFxModule

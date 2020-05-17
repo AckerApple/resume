@@ -1,6 +1,6 @@
 import { log } from "../log"
 import { maxResizeImage } from './imageUtils'
-import { leftJoinDocument } from './joins'
+import { leftJoinDocument } from 'ack-angular-fire/dist/joins'
 import { Observable } from 'rxjs/internal/Observable'
 import {
   //DocumentData,
