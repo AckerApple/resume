@@ -118,16 +118,6 @@ export class AppData {
   applyOfflineConfig( data:offlineData ){
     Object.assign(this.offline, data)
     this.offline.user = this.offline.user || <user>{}
-
-/*
-    const user = this.offline.user
-    if( user ){
-      const security = this.offline.user.security
-      if( security ){
-        this.AckApi.config.$http.headers['Authorization'] = security.token
-      }
-    }
-*/
   }
 
   completedIntro(){

@@ -10,11 +10,11 @@ import { FamilyApp } from '../../FamilyApp'
   template: string,
   animations:animations
 }) export class FamilyMain {
-  photos$:Observable<any[]>
-  modal:any
+  photos$: Observable<any[]>
+  modal: any
 
   constructor(
-    public FamilyApp:FamilyApp
+    public FamilyApp: FamilyApp
   ){
     this.photos$ = this.FamilyApp.Data.Photos.loadPhotos()
   }
