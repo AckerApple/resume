@@ -11,7 +11,10 @@ import {
 import { Observable } from "rxjs/internal/Observable"
 //import { BehaviorSubject } from "rxjs/internal/BehaviorSubject"
 //import { AppData } from './AppData'
-import { getUserPhotoUrl, FamilyApp } from './FamilyApp'
+import {
+  // getUserPhotoUrl,
+  FamilyApp
+} from './FamilyApp'
 import { user } from '../types'
 
 export class FamilyData {
@@ -23,7 +26,7 @@ export class FamilyData {
     users:0
   }
 
-  Photos:FamilyPhotos
+  public Photos:FamilyPhotos
   ResumePhotos:FamilyPhotos
 
   constructor(
@@ -32,13 +35,13 @@ export class FamilyData {
     //public storage:AngularFireStorage
   ){
     this.load = this.FamilyApp.load
-    
+
     this.Photos = new FamilyPhotos(
       this.FamilyApp
     )
     this.Photos.storageBase = 'family-cloud/photos/'
     this.Photos.collectionBase = 'family-cloud/photos/uploads'
-    
+
     this.ResumePhotos = new FamilyPhotos(
       this.FamilyApp
     )
@@ -66,41 +69,22 @@ export class FamilyData {
     return db.collection("family-cloud")
   }
 
-  userCollect():AngularFirestoreCollection{
-    return this.FamilyApp.db.collection("users")
-  }
-
-  loadUser( uid:string ):Observable<{}>{
-    return this.FamilyApp.db.collection("users").doc(uid).valueChanges()
-  }
-
-  loadUsers():Observable<user[]>{
+  loadUsers(): Observable<user[]> {
     if( this.users$ )return this.users$
 
     ++this.loadCounts.users
 
-    const collect = this.userCollect()
+    const collect = this.FamilyApp.db.collection('users');
     this.users$ = <Observable<user[]>>collect.valueChanges()
 
     const sub = this.users$.subscribe(_users=>{
-      --this.loadCounts.users
-      sub.unsubscribe()
+      --this.loadCounts.users;
+      sub.unsubscribe();
     },err=>{
-      log("FamilyData","#loadUsers",err)
+      log("FamilyData","#loadUsers", err);
       sub.unsubscribe()
     })
 
     return this.users$
-  }
-
-  createUserBy( user ):Promise<any>{
-    const sendUser = {
-      name  : user.displayName || user.name || user.email,
-      email : user.email,
-      uid   : user.uid,
-      added : Date.now(),
-      photoUrl : getUserPhotoUrl(user)
-    }
-    return this.userCollect().doc(user.uid).set( sendUser )
   }
 }

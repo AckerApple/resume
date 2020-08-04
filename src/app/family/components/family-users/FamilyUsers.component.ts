@@ -4,13 +4,12 @@ import { animations } from "ack-angular-fx"
 import { FamilyApp } from '../../FamilyApp'
 //import { AppData } from '../../AppData'
 
-
 @Component({
   template: string,
-  animations:animations
+  animations: animations
 }) export class FamilyUsers {
   constructor(
-    public FamilyApp:FamilyApp
+    public FamilyApp: FamilyApp
   ){
     this.FamilyApp.Data.loadUsers()
   }
