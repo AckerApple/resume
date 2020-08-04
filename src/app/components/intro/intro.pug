@@ -1,25 +1,25 @@
+//-  "[activatedRoute]" = "fx.loaded && outlet.activated ? outlet.activatedRoute : null"
 fx-tracker(
   #fx = "FxTracker"
-  "[activatedRoute]" = "fx.loaded && outlet.activated ? outlet.activatedRoute : null"
   "[orderArray]" = "['welcome','purpose','family']"
+  "[activatedRoute]" = "fx.loaded && activatedRoute.firstChild || activatedRoute"
 )
 
 route-reporter(
   "(routeChange)"="makeNextLink()"
 )
 
-
 table.height-full.width-full(
   cellPadding="0" cellSpacing="0" border="0"
-  "(swipeleft)" = "fx.orderIndex==fx.orderArray.length-1 && navTo('../') || navTo(fx.orderArray[fx.orderIndex+1])"
-  "(swiperight)" = "fx.orderIndex==0 || navTo( fx.orderArray[fx.orderIndex-1] )"
+  "(swipeleft)" = "runSwipeLeft(fx)"
+  "(swiperight)" = "runSwipeRight(fx)"
 )
   tbody
     tr
       td.height-full.pos-rel.text-white(
         valign = "top"
         "[ngClass]" = "{'overflow-hidden pos-abs-kids height-full-router-wrap':fx.inFx}"
-        "[@slideInOutLeftKids]"    = "{value:fx.id,params:{time:'250ms'}}"
+        "[@slideInOutLeftKids]"    = "{value:fx.id, params:{time:'250ms'}}"
         "(@slideInOutLeftKids.start)" = "fx.inFx=true"
         "(@slideInOutLeftKids.done)"  = "fx.delayOutFx()"
       )
@@ -27,30 +27,32 @@ table.height-full.width-full(
 
     tr
       td
-        .text-center
-          div
-            a.inline-block.bg-stable.pad-xs.text-dark.radius-5.pad-h-4x.bolder("(click)"="navTo(fx.orderArray[fx.orderIndex+1])")
-              |CONTINUE&nbsp;&nbsp;
-              span.fas.fa-chevron-circle-right
-          br
-        .child-pad-h-sm.flex-valign-center.flex-center
-          a.fa-circle.no-a-style(
-            routerLink = "welcome"
-            "[ngClass]" = "ActivatedRoute.firstChild.routeConfig.path==='welcome' ? 'far' : 'fas'"
+        .text-center.pad-smx
+          a.inline-block.bg-stable.pad-xs.text-dark.radius-5.pad-h-4x.bolder(
+            "(click)"="continueByTracker(fx)"
           )
-          a.fa-circle.no-a-style(
-            routerLink = "purpose"
-            "[ngClass]" = "ActivatedRoute.firstChild.routeConfig.path==='purpose' ? 'far' : 'fas'"
-          )
-          a.fa-circle.no-a-style(
-            routerLink = "family"
-            "[ngClass]" = "ActivatedRoute.firstChild.routeConfig.path==='family' ? 'far' : 'fas'"
-          )
-          .pad-top-xxs
-            a.no-a-style.fas.fa-caret-right.fa-lg(
-              "[routerLink]" = "nextLink"
+            |CONTINUE&nbsp;&nbsp;
+            span.fas.fa-chevron-circle-right
+
+        .text-white.opacity-half
+          .child-pad-h-sm.flex-valign-center.flex-center
+            a.fa-circle.no-a-style(
+              routerLink = "welcome"
+              "[ngClass]" = "activatedRoute.firstChild.routeConfig.path==='welcome' ? 'far' : 'fas'"
             )
-        .text-xxs.opacity-half.text-center.pad-top-xs
-          strong (swipe to navigate)
-          br
-          br
+            a.fa-circle.no-a-style(
+              routerLink = "purpose"
+              "[ngClass]" = "activatedRoute.firstChild.routeConfig.path==='purpose' ? 'far' : 'fas'"
+            )
+            a.fa-circle.no-a-style(
+              routerLink = "family"
+              "[ngClass]" = "activatedRoute.firstChild.routeConfig.path==='family' ? 'far' : 'fas'"
+            )
+            .pad-top-xxs
+              a.no-a-style.fas.fa-caret-right.fa-lg(
+                "[routerLink]" = "nextLink"
+              )
+          .text-xxs.text-center.pad-top-xs
+            strong (swipe to navigate)
+            br
+            br

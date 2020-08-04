@@ -11,34 +11,36 @@ function blobToFile(
 }
 
 export function maxResizeImage(
-  file:File,
+  file: File,
   MAX_WIDTH = 800,
   MAX_HEIGHT = 600,
-  mime?:string
-):Promise<File>{
+  mime?: string
+): Promise<File>{
   return resizeImageToCanvas(
     file,
     MAX_WIDTH,
     MAX_HEIGHT
-  ).then(canvas=>
-    <Promise<any>>new Promise((res,rej)=>{
-      canvas.toBlob(blob=>{
-        res( blobToFile(blob,file.name) )
-      }, mime || file.type, 1)
+  ).then(canvas =>
+    new Promise((res, rej) => {
+      canvas.toBlob(blob => {
+        res( blobToFile(blob,file.name) );
+      }, mime || file.type, 1);
     })
-  )
+  );
 }
 
 export function fileToImgTag(
   file:File
-):Promise<any>{
+): Promise<any>{
   return new Promise((res,rej)=>{
-    var img = document.createElement("img");
-    var reader = new FileReader();  
-    reader.onload = function(e) {
-      img.src = e.target['result']
-      res( img )
-    }
+    const img = document.createElement('img');
+    const reader = new FileReader();
+
+    reader.onload = (e) => {
+      img.src = e.target.result as string;
+      res( img );
+    };
+
     reader.readAsDataURL(file);
   })
 }

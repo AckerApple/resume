@@ -11,14 +11,14 @@ import { AppData } from "../../AppData"
 @Component({
   selector: 'app-root',
   template: string,
-  animations:animations
+  animations
 })
 export class AppComponent {
   screenScrollModelY:number
   swipes = 0
   swiping:boolean
   subs:Subscription[]=[]
-  
+
   constructor(
     public Router:Router,
     public AppData:AppData,

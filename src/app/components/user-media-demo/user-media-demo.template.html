@@ -1,0 +1,16 @@
+
+<div class="flex-wrap flex-center child-pad-sm">
+  <div class="flex-1" *ngIf="url" [@fadeInOutUp]="1">
+    <div class="flex-center">
+      <div class="height-200 width-200 radius-half" [style.background-image]="'url('+url+')' | safeStyle" style="background-repeat:no-repeat;background-position:center;background-size:cover"></div>
+    </div>
+    <div class="flex-wrap pad"><a class="flex-1 text-white bg-assertive pad-sm radius-5 text-center" (click)="url = null"><i class="fas fa-trash"></i></a><a class="flex-1 text-white bg-positive pad-sm radius-5 text-center" *ngIf="osFilePath" [share-button]="{files:[osFilePath], message:'This Acker Apple guy is more than fairly well a talented individual
+
+', subject:'Photo I took in the Acker Apple app'}"><i class="fas fa-external-link-alt"></i></a></div>
+  </div>
+  <div class="flex-1">
+    <div class="flex-center"><a class="pos-rel block overflow-hidden height-200 width-200 radius-half" *ngIf="showPreview" (take-photo)="url=$event.url;osFilePath=$event.osFilePath">
+        <ack-webcam class="pos-abs block" #webcam="" (click)="processCamPhoto(webcam)" style="top:-17%;left:-17%;" [style.height.px]="200*1.37" [style.width.px]="200*1.37"></ack-webcam></a></div>
+    <div class="pad"><a class="text-white bg-positive block pad-sm radius-5 text-center" #takePhoto="TakePhoto" (take-photo)="url=$event.url;osFilePath=$event.osFilePath" (click)="takePhoto.supported || processCamPhoto(webcam)"><i class="fas fa-camera"></i></a></div>
+  </div>
+</div>

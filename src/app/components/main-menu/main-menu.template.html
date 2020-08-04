@@ -1,0 +1,72 @@
+
+<div class="flex-center height-full flex-valign-center">
+  <div class="text-white width-full max-width-400"><br/><br/>
+    <div class="flex-center width-full overflow-hidden">
+      <div class="max-width-500 flex-1 animated rubberBand slower delay-2s" style="height:60px">
+        <div class="flex-center">
+          <div class="width-full flex-1" *ngIf="delay2" [@fadeInOut]="1" style="max-width:280px">
+            <audio class="width-full" controls="controls">
+              <source src="assets/audio/AppIntro.mp3" type="audio/mpeg"/>Your device does not support audio elements.
+            </audio>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h1 class="margin-0" (click)="AppData.debugTap()">
+      <div class="inline-block" [@fadeInOut]="{value:1,params:{time:'1s'}}">
+        <div class="animated bounce flex-valign-center"><span>&nbsp;</span><img class="radius-half" src="/assets/images/profile-72@2x.png" width="40" height="40"/><strong>&nbsp;Acker Apple</strong></div>
+      </div>
+    </h1>
+    <div class="child-pad-v text-center animated fast swing delay-300ms">
+      <div class="animated" [class.pulse]="mouseover===0" (mouseover)="mouseover=0" (mouseout)="mouseover=null"><a class="no-a-style bg-calm pad flex-valign-center" routerLink="/life">
+          <div class="pos-rel opacity-90">
+            <div class="pos-abs" style="top:-5px"><i class="fa-2x fas fa-hand-spock"></i></div>&nbsp;
+          </div><strong class="flex-1">LIFE</strong><i class="fas fa-chevron-right"></i></a></div>
+      <div class="animated" [class.pulse]="mouseover===1" (mouseover)="mouseover=1" (mouseout)="mouseover=null"><a class="no-a-style bg-energized pad flex-valign-center" routerLink="/career">
+          <div class="pos-rel opacity-90">
+            <div class="pos-abs" style="top:-5px"><i class="fa-2x fas fa-rocket"></i></div>&nbsp;
+          </div><strong class="flex-1">CAREER</strong><i class="fas fa-chevron-right"></i></a></div>
+      <div class="animated" [class.pulse]="mouseover===2" (mouseover)="mouseover=2" (mouseout)="mouseover=null"><a class="no-a-style bg-royal pad flex-valign-center" routerLink="/passion">
+          <div class="pos-rel opacity-90">
+            <div class="pos-abs" style="top:-5px"><i class="fa-2x fas fa-heart"></i></div>&nbsp;
+          </div><strong class="flex-1">PASSION</strong><i class="fas fa-chevron-right"></i></a></div>
+      <div class="animated" [class.pulse]="mouseover===3" (mouseover)="mouseover=3" (mouseout)="mouseover=null"><a class="no-a-style bg-assertive pad flex-valign-center" routerLink="/family">
+          <div class="pos-rel opacity-90">
+            <div class="pos-abs" style="top:-5px"><i class="fa-2x fas fa-users"></i></div>&nbsp;
+          </div><strong class="flex-1">FAMILY LOGIN</strong><i class="fas fa-chevron-right"></i></a></div>
+    </div>
+    <div class="text-right pad-h">
+      <div class="flex-apart flex-valign-center" [@fadeInOut]="{value:1,params:{time:'1s'}}">
+        <div class="flex1 text-center"><a class="no-a-style text-white text-xs" routerLink="/stats"><strong>app stats</strong></a></div>
+        <div class="flex1 text-center" *ngIf="AppData.environment.platform!=='ios'"><a class="no-a-style text-white text-xs" href="https://ackerapple.com" target="_blank"><strong>website</strong></a></div>
+        <div class="flex1 text-center" *ngIf="AppData.environment.platform=='ios'"><a class="no-a-style text-white text-xs" [share-button]="{url:'https://ackerapple.com', message:'Presentation site of South Florida software engineer Acker Apple
+
+', subject:'Check out this software engineer'}"><strong>share</strong></a></div>
+        <ack-modal *ngIf="confirmIntro" (close)="confirmIntro=false" backgroundColor="rgba(3,3,3,.7)">
+          <div class="pad radius-5 max-width-500" style="border:1px rgba(3,3,3,.7) solid;background-color:#EEE">
+            <h3>Go back to introductory screens?</h3>
+            <p>You originally viewed this content <strong>{{ AppData.offline.completedIntroAt | aDate : 'fromNow' }}</strong> on {{ AppData.offline.completedIntroAt | date : 'shortDate' }} at {{ AppData.offline.completedIntroAt | date : 'shortTime' }}</p><a class="no-a-style block pad bg-positive text-center text-white" routerLink="/intro" (click)="confirmIntro=false"><strong>Goto Intro</strong></a>
+          </div>
+        </ack-modal>
+        <div class="flex1 text-center"><a class="text-xs" (click)="confirmIntro=true"><strong>intro</strong></a></div>
+      </div>
+    </div>
+    <div class="flex-center pad-top"><strong class="text-xs opacity-half">v{{ version }}</strong></div>
+    <div class="flex-evenly child-pad pad-top-2x"><a class="no-a-style radius-half width-60 height-60 bg-positive flex-valign-center" (click)="showPhoneModal = !showPhoneModal"><i class="fas fa-phone fa-2x"></i></a><a class="no-a-style radius-half width-60 height-60 bg-balanced flex-valign-center" (click)="showEmailModal = !showEmailModal"><i class="fas fa-envelope fa-2x"></i></a></div>
+    <div><br/></div>
+  </div>
+</div>
+<ack-modal *ngIf="showEmailModal" (close)="showEmailModal=false" backgroundColor="rgba(3,3,3,.7)">
+  <div class="pad radius-5" style="border:1px rgba(3,3,3,.7) solid;background-color:#EEE">
+    <h2>My Email Address</h2>
+    <div class="text-center"><a href="mailto:me@AckerApple.com?subject=Contact from app">me@AckerApple.com</a></div><br/><br/>
+    <div class="pad"><a class="block pad radius-5 text-center text-white" (click)="copyEmail()" [ngClass]="hasEmailCopy ? 'bg-energized' : 'bg-positive'">COPY EMAIL</a></div>
+  </div>
+</ack-modal>
+<ack-modal *ngIf="showPhoneModal" (close)="showPhoneModal=false" backgroundColor="rgba(3,3,3,.7)">
+  <div class="pad radius-5" style="border:1px rgba(3,3,3,.7) solid;background-color:#EEE">
+    <h2>My Phone Number</h2>
+    <div class="text-center"><a href="tel:5612392967">(561) 239-2967</a></div><br/><br/>
+    <div class="pad"><a class="block pad radius-5 text-center text-white" (click)="copyPhone()" [ngClass]="hasPhoneCopy ? 'bg-energized' : 'bg-positive'">COPY PHONE</a></div>
+  </div>
+</ack-modal>

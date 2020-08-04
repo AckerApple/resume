@@ -1,0 +1,18 @@
+
+<ng-container [(htmlWidthModel)]="AppData.width"></ng-container><div *ngIf="!AppData.loaded">Loading...</div>
+<ack-app-stage class="block height-full width-full" *ngIf="AppData.loaded" id="top" name="top" [@fadeInOutUp]="1" [debug]="AppData.debug" [debugs]="{environment:AppData.environment}" (swipeleft)="swiping &amp;&amp; AppData.navAhead()" (swiperight)="swiping &amp;&amp; AppData.navBack()">
+  <ng-template #headerPrepend="">
+    <div [style.height.px]="AppData.environment.platform==='ios' ? 20 : null"></div>
+  </ng-template>
+  <ng-template #headerAppend="">
+    <ng-container *ngFor="let directives of AppData.headerTemplates.directives">
+      <ng-container *ngFor="let append of directives.appends">
+        <div class="flex">
+          <ng-container *ngTemplateOutlet="append"></ng-container>
+        </div>
+      </ng-container>
+    </ng-container>
+  </ng-template>
+</ack-app-stage>
+<ng-container [(screenScrollModelY)]="screenScrollModelY"></ng-container>
+<div class="pos-fixed bottom-0 right-0 pad-xxs" *ngIf="screenScrollModelY &gt; 200" goto-top=""><a class="fa-2x fas fa-arrow-circle-up text-white opacity-half" [@fadeInUp]="screenScrollModelY &gt; 200" [@fadeOutDown]="screenScrollModelY &lt; 200"></a></div>

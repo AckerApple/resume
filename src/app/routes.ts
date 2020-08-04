@@ -14,71 +14,71 @@ import { Route } from '@angular/router';
 import { route as family } from './family/routes';
 
 export const routes: Route[] = [{
-  path:'',
-  component:MainMenu,
-  data:{
-    title:'Main Menu',
-    icon:'fas fa-th',
-    titleBar:false
+  path: '',
+  component: MainMenu,
+  data: {
+    title: 'Main Menu',
+    icon: 'fas fa-th',
+    titleBar: false
   }
-},{
-  path:'intro',
-  component:Intro,
-  data:{
-    titleBar:false,
-    swiping:false
-  },children:[{
-    path: "", redirectTo: "welcome", pathMatch:"full"
-  },{
-    path:'welcome',
-    component:Welcome
-  },{
-    path:'purpose',
-    component:Purpose
-  },{
-    path:'family',
-    component:IntroFamily
+}, {
+  path: 'intro',
+  component: Intro,
+  data: {
+    titleBar: false,
+    swiping: false
+  }, children: [{
+    path: '', redirectTo: 'welcome', pathMatch: 'full'
+  }, {
+    path: 'welcome',
+    component: Welcome
+  }, {
+    path: 'purpose',
+    component: Purpose
+  }, {
+    path: 'family',
+    component: IntroFamily
   }]
-},family,{
-  path:'life',
-  component:Life,
-  data:{
-    title:'Life',
-    icon:'fas fa-rocket'
+}, family, {
+  path: 'life',
+  component: Life,
+  data: {
+    title: 'Life',
+    icon: 'fas fa-rocket'
   }
-},{
-  path:'career/highlights',
-  component:ResumeHighlights,
-  data:{
-    title:'Resume Highlights',
-    icon:'fas fa-file'
+}, {
+  path: 'career/highlights',
+  component: ResumeHighlights,
+  data: {
+    title: 'Resume Highlights',
+    icon: 'fas fa-file'
   }
-},{
-  path:'career/demos',
-  component:Demos,
-  data:{
-    title:'Widget Demos',
-    icon:'fas fa-cog'
+}, {
+  path: 'career/demos',
+  component: Demos,
+  data: {
+    title: 'Widget Demos',
+    icon: 'fas fa-cog'
   }
-},{
-  path:'career',
-  component:Resume,
-  data:{
-    title:'Career',
-    icon:'fas fa-rocket'
+}, {
+  path: 'career',
+  component: Resume,
+  data: {
+    title: 'Career',
+    icon: 'fas fa-rocket'
   }
-},{
-  path:'passion',
-  component:Passion,
-  data:{
-    title:'Passion',
-    icon:'fas fa-heart'
+}, {
+  path: 'passion',
+  component: Passion,
+  data: {
+    title: 'Passion',
+    icon: 'fas fa-heart'
   }
-},{
-  path:'stats',
-  component:BundleStats,
-  data:{
-    title:'Bundle Stats',
-    icon:'fas fa-thermometer'
+}, {
+  path: 'stats',
+  component: BundleStats,
+  data: {
+    title: 'Bundle Stats',
+    icon: 'fas fa-thermometer'
   }
 }];

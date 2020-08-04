@@ -1,0 +1,73 @@
+
+<div class="flex-center">
+  <div class="flex-1">
+    <ng-container *ngIf="boxValues;else noSupport">
+      <div>
+        <div>
+          <div class="overflow-hidden pos-rel width-full height-300">
+            <div class="pos-abs width-full height-full flex-center flex-valign-center" [style.transform]="boxValues.transformZ | safeStyle">
+              <div class="flex-center flex-valign-center bg-positive" style="border-right:2px solid red;border-top:2px solid white;" [style.width.px]="boxValues.portrait ? 100 : 200" [style.height.px]="boxValues.portrait ? 200 : 100"><span>alpha</span></div>
+            </div>
+          </div>
+          <div class="flex-valign-center child-pad-xs">
+            <div class="width-40 text-sm text-right">0</div>
+            <div class="flex-1">
+              <div class="border border-white radius-10 height-20" style="padding-right:2px">
+                <div class="pos-rel">
+                  <div class="pos-abs text-center" style="top:-4px" [style.left.%]="boxValues.aPercent">|
+                    <div class="line-height-70 text-xxs">{{ boxValues.a }}</div>
+                  </div>&nbsp;
+                </div>
+              </div>
+            </div>
+            <div class="width-40 text-sm">360</div>
+          </div>
+          <div class="text-center">alpha</div>
+          <div class="overflow-hidden pos-rel width-full height-300">
+            <div class="pos-abs width-full height-full flex-center flex-valign-center" [style.transform]="boxValues.transformX | safeStyle">
+              <div class="flex-center flex-valign-center bg-positive" style="border-right:2px solid red;border-top:2px solid white;" [style.width.px]="boxValues.portrait ? 100 : 200" [style.height.px]="boxValues.portrait ? 200 : 100"><span>beta</span></div>
+            </div>
+          </div>
+          <div class="flex-valign-center child-pad-xs">
+            <div class="width-40 text-sm text-right">-180</div>
+            <div class="flex-1">
+              <div class="border border-white radius-10 height-20" style="padding-right:2px">
+                <div class="pos-rel">
+                  <div class="pos-abs text-center" style="top:-4px" [style.left.%]="boxValues.bPercent">|
+                    <div class="line-height-70 text-xxs">{{ boxValues.b }}</div>
+                  </div>&nbsp;
+                </div>
+              </div>
+            </div>
+            <div class="width-40 text-sm">180</div>
+          </div>
+          <div class="text-center">beta</div>
+          <div class="overflow-hidden pos-rel width-full height-300">
+            <div class="pos-abs width-full height-full flex-center flex-valign-center" [style.transform]="boxValues.transformY | safeStyle">
+              <div class="flex-center flex-valign-center bg-positive" style="border-right:2px solid red;border-top:2px solid white;" [style.width.px]="boxValues.portrait ? 100 : 200" [style.height.px]="boxValues.portrait ? 200 : 100"><span>gamma</span></div>
+            </div>
+          </div>
+          <div class="flex-valign-center child-pad-xs">
+            <div class="width-40 text-sm text-right">-90</div>
+            <div class="flex-1">
+              <div class="border border-white radius-10 height-20" style="padding-right:2px">
+                <div class="pos-rel">
+                  <div class="pos-abs text-center" style="top:-4px" [style.left.%]="boxValues.gPercent">|
+                    <div class="line-height-70 text-xxs">{{ boxValues.g }}</div>
+                  </div>&nbsp;
+                </div>
+              </div>
+            </div>
+            <div class="width-40 text-sm">90</div>
+          </div>
+          <div class="text-center">gamma</div>
+        </div>
+      </div>
+    </ng-container>
+    <ng-template #noSupport="">
+      <div class="pad bg-warning text-warning"><i class="fas fa-exclamation-triangle"></i>&nbsp;&nbsp;
+        Device orientation not supported
+      </div>
+    </ng-template>
+  </div>
+</div>

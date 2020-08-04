@@ -17,13 +17,13 @@ ng-container(*ngIf="FamilyApp.loaded")
     *ngIf="FamilyApp.user"
     "[@fadeInOutUp]"="1"
   )
+    //- "[activatedRoute]" = "fx.loaded && outlet.activated ? outlet.activatedRoute : null"
     fx-tracker(
-      #fx = "FxTracker"
-      "[activatedRoute]" = "fx.loaded && outlet.activated ? outlet.activatedRoute : null"
+      #fx="FxTracker"
     )
     table.width-full.height-full(
       cellPadding="0"
-      cellSpacing="0" 
+      cellSpacing="0"
       border="0"
     )
       tr
@@ -55,13 +55,13 @@ ng-container(*ngIf="FamilyApp.loaded")
               i.fas.fa-users.fa-2x
               //-.text-xs users
 
-            ng-container(*ngIf="FamilyApp.user.developer")
+            ng-container(*ngIf="FamilyApp.user")
               a.text-white.flex1.text-center(
                 "[ngClass]" = "outlet.activatedRoute.routeConfig.path=='resume' ? 'strong bg-energized' : 'bg-balanced'"
                 routerLink = "resume"
               )
                 i.fas.fa-user-graduate.fa-2x
-            
+
             a.text-white.flex1.text-center(
               "[ngClass]" = "outlet.activatedRoute.routeConfig.path=='' ? 'strong bg-energized' : 'bg-positive'"
               routerLink = "./"

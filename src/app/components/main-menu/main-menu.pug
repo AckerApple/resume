@@ -1,51 +1,6 @@
-ack-modal(
-  *ngIf="showEmailModal"
-  "(close)" = "showEmailModal=false"
-  backgroundColor = "rgba(3,3,3,.7)"
-)
-  .pad.radius-5(
-    style="border:1px rgba(3,3,3,.7) solid;background-color:#EEE"
-  )
-    h2 My Email Address
-    .text-center
-      a(
-        href="mailto:me@AckerApple.com?subject=Contact from app"
-      )
-        |me@AckerApple.com
-    br
-    br
-    .pad
-      a.block.pad.radius-5.text-center.text-white(
-        "(click)" = "copyEmail()"
-        "[ngClass]" = "hasEmailCopy ? 'bg-energized' : 'bg-positive'"
-      )
-        |COPY EMAIL
-
-ack-modal(
-  *ngIf="showPhoneModal"
-  "(close)" = "showPhoneModal=false"
-  backgroundColor = "rgba(3,3,3,.7)"
-)
-  .pad.radius-5(
-    style="border:1px rgba(3,3,3,.7) solid;background-color:#EEE"
-  )
-    h2 My Phone Number
-    .text-center
-      a(
-        href="tel:5612392967"
-      )
-        |(561) 239-2967
-    br
-    br
-    .pad
-      a.block.pad.radius-5.text-center.text-white(
-        "(click)" = "copyPhone()"
-        "[ngClass]" = "hasPhoneCopy ? 'bg-energized' : 'bg-positive'"
-      )
-        |COPY PHONE
-
-.flex-center.titlelessRouteWrap
+.flex-center.height-full.flex-valign-center
   .text-white.width-full.max-width-400
+    br
     br
     .flex-center.width-full.overflow-hidden
       .max-width-500.flex-1.animated.rubberBand.slower.delay-2s(
@@ -76,7 +31,7 @@ ack-modal(
             src="/assets/images/profile-72@2x.png" width="40" height="40"
           )
           strong &nbsp;Acker Apple
-    
+
     .child-pad-v.text-center.animated.fast.swing.delay-300ms
       .animated(
         "[class.pulse]" = "mouseover===0"
@@ -92,7 +47,7 @@ ack-modal(
             |&nbsp;
           strong.flex-1 LIFE
           i.fas.fa-chevron-right
-            
+
 
       .animated(
         "[class.pulse]" = "mouseover===1"
@@ -138,7 +93,7 @@ ack-modal(
             |&nbsp;
           strong.flex-1 FAMILY LOGIN
           i.fas.fa-chevron-right
-    
+
     .text-right.pad-h
       .flex-apart.flex-valign-center(
         "[@fadeInOut]" = "{value:1,params:{time:'1s'}}"
@@ -198,10 +153,58 @@ ack-modal(
         "(click)" = "showPhoneModal = !showPhoneModal"
       )
         i.fas.fa-phone.fa-2x
-      
+
       a.no-a-style.radius-half.width-60.height-60.bg-balanced.flex-valign-center(
         "(click)" = "showEmailModal = !showEmailModal"
       )
         i.fas.fa-envelope.fa-2x
     div
       br
+
+//- MODALS
+
+ack-modal(
+  *ngIf="showEmailModal"
+  "(close)" = "showEmailModal=false"
+  backgroundColor = "rgba(3,3,3,.7)"
+)
+  .pad.radius-5(
+    style="border:1px rgba(3,3,3,.7) solid;background-color:#EEE"
+  )
+    h2 My Email Address
+    .text-center
+      a(
+        href="mailto:me@AckerApple.com?subject=Contact from app"
+      )
+        |me@AckerApple.com
+    br
+    br
+    .pad
+      a.block.pad.radius-5.text-center.text-white(
+        "(click)" = "copyEmail()"
+        "[ngClass]" = "hasEmailCopy ? 'bg-energized' : 'bg-positive'"
+      )
+        |COPY EMAIL
+
+ack-modal(
+  *ngIf="showPhoneModal"
+  "(close)" = "showPhoneModal=false"
+  backgroundColor = "rgba(3,3,3,.7)"
+)
+  .pad.radius-5(
+    style="border:1px rgba(3,3,3,.7) solid;background-color:#EEE"
+  )
+    h2 My Phone Number
+    .text-center
+      a(
+        href="tel:5612392967"
+      )
+        |(561) 239-2967
+    br
+    br
+    .pad
+      a.block.pad.radius-5.text-center.text-white(
+        "(click)" = "copyPhone()"
+        "[ngClass]" = "hasPhoneCopy ? 'bg-energized' : 'bg-positive'"
+      )
+        |COPY PHONE

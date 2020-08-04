@@ -1,0 +1,7 @@
+
+<div class="bg-warning pad text-warning" *ngIf="FamilyApp.loaded &amp;&amp; !FamilyApp.user.trusted;else app"><i class="fas fa-exclamation-triangle"></i>&nbsp;&nbsp;
+  Currently, you are not a trusted user. You will have a very limited access experience.
+</div>
+<ng-template #app="">
+  <photo-interface [srcBase]="'family-cloud/photos/'" [photos$]="photos$" (delete)="FamilyApp.Data.Photos.deletePhoto($event)" (addFiles)="FamilyApp.Data.Photos.sendPhotos( $event )" (view)="$event.allow.delete = $event.photo.addedBy===FamilyApp.user.uid"></photo-interface>
+</ng-template>

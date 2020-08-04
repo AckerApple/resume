@@ -1,0 +1,36 @@
+
+<div class="flex-center">
+  <div class="flex-1 max-width-500">
+    <p class="pad-h">Learn hands on some of my development capabilities.</p>
+    <div class="child-margin-v flex-stacked">
+      <div class="bg-royal text-white pad"><a class="flex-valign-center" (click)="shows.DeviceOrientation=!shows.DeviceOrientation">
+          <div class="flex-1"><i class="fas fa-arrows-alt"></i>&nbsp;&nbsp;<strong>Device Orientation</strong></div><a *ngIf="shows.DeviceOrientation"><i class="fas fa-times-circle fa-lg"></i></a></a>
+        <div *ngIf="shows.DeviceOrientation" [@fadeInOutUp]="1">
+          <p class="text-justify text-sm">Try moving your device all about and see what happens.</p>
+          <device-orientation></device-orientation>
+        </div>
+      </div>
+      <div class="bg-royal text-white pad"><a class="flex-valign-center flex-1" (click)="shows.showUserMedia=!shows.showUserMedia">
+          <div class="flex-1"><i class="fas fa-image"></i>&nbsp;&nbsp;<strong>User Media</strong></div><a *ngIf="shows.showUserMedia"><i class="fas fa-times-circle fa-lg"></i></a></a>
+        <div *ngIf="shows.showUserMedia" [@fadeInOutUp]="1">
+          <p class="text-justify text-sm">Take a photo and let's see what your device can see.</p>
+          <user-media-demo></user-media-demo>
+        </div>
+      </div>
+      <div class="bg-royal pad text-white"><a class="flex-valign-center flex-1" (click)="shows.showDeviceLocation=!shows.showDeviceLocation">
+          <div class="flex-1"><i class="fas fa-map"></i>&nbsp;&nbsp;<strong>Device Location</strong></div><a *ngIf="shows.showDeviceLocation"><i class="fas fa-times-circle fa-lg"></i></a></a>
+        <div *ngIf="shows.showDeviceLocation" [@fadeInOutUp]="1">
+          <p class="text-justify text-sm">Test this apps ability to find your location using the button below.</p>
+          <device-location></device-location>
+        </div>
+      </div>
+      <div class="bg-royal pad text-white"><a class="flex-valign-center flex-1" (click)="shows.showSocialSharing=!shows.showSocialSharing">
+          <div class="flex-1"><i class="fas fa-external-link-alt"></i>&nbsp;&nbsp;<strong>Social Sharing</strong></div><a *ngIf="shows.showSocialSharing"><i class="fas fa-times-circle fa-lg"></i></a></a>
+        <div *ngIf="shows.showSocialSharing" [@fadeInOutUp]="1">
+          <p class="text-justify text-sm">Share as much as you would like to.</p>
+          <social-sharing></social-sharing>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

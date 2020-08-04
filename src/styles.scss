@@ -6,7 +6,6 @@
     margin:0;padding:0;
     height:100%;width:100%;
     @extend .no-scroll-bars;
-    /*@extend .bg-positive;*/
     background-color:#444;
   }
 /* end: browser correction classes */
@@ -23,7 +22,7 @@ body,html{
   ::-webkit-input-placeholder {@content}
   :-moz-placeholder           {@content}
   ::-moz-placeholder          {@content}
-  :-ms-input-placeholder      {@content}  
+  :-ms-input-placeholder      {@content}
 }
 
 @include placeholder {
@@ -33,10 +32,7 @@ body,html{
   font-size:0.8em;
 }
 
-//@import "./custom-forms.scss";
 @import "ack-angular/ack-angular.scss";
-//@import "./modules/ack-angular-fields/ack-angular-fields.scss";
-
 
 /* help ng fxs  */
 .pos-abs-kids > *{

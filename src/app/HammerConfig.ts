@@ -2,13 +2,14 @@ import * as Hammer from "hammerjs"
 import {
   HammerGestureConfig, HAMMER_GESTURE_CONFIG
 } from "@angular/platform-browser"
+import { Injectable } from '@angular/core';
 
-export class HammerConfig extends HammerGestureConfig{
-  overrides = <any>{
-    'pan': {
+@Injectable() export class HammerConfig extends HammerGestureConfig{
+  overrides = {
+    pan: {
       touchAction:"auto"
     },
-    'swipe': {
+    swipe: {
       direction:Hammer.DIRECTION_HORIZONTAL
       //disables vertical scroll
       //direction:Hammer.DIRECTION_ALL
@@ -21,10 +22,10 @@ export class HammerConfig extends HammerGestureConfig{
         [Hammer.Pan,{ direction: Hammer.DIRECTION_HORIZONTAL }],
     ]
   }
-  
+
   buildHammer(element: HTMLElement) {
-    let mc = new Hammer(element, {
-      touchAction: "pan-y"
+    const mc = new Hammer(element, {
+      touchAction: 'pan-y'
     });
     return mc;
   }

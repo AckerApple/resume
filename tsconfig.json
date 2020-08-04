@@ -1,29 +1,25 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "strict": false,
-    "strictPropertyInitialization": false,
-    "noUnusedLocals": true,
-    "noImplicitAny": false,
-
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
-    "module": "es2015",
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
-    "resolveJsonModule": true,
+    "downlevelIteration": true,
     "experimentalDecorators": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
     "importHelpers": true,
-    "target": "es5",
-    "types": ["node"],
-    "typeRoots": [
-      "node_modules/@types"
-    ],
+    "target": "es2015",
     "lib": [
       "es2018",
       "dom"
     ]
+  },
+  "angularCompilerOptions": {
+    "enableIvy": false,
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
   }
 }

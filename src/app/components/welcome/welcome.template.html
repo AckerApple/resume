@@ -1,0 +1,22 @@
+
+<div class="height-full flex-valign-center">
+  <div class="flex-1 text-center">
+    <div class="flex-wrap flex-center">
+      <div class="pad-h-2x pad-top" [style.transform]="transformZ"><i class="fas fa-hand-paper fa-4x animate__animated animate__tada animate__slower"></i></div>
+      <h1 class="text-royal pad-bottom-0 margin-bottom-0">Hello & Welcome</h1>
+    </div>
+    <div class="pad-0 text-energized margin-bottom-0">My name is</div>
+    <div class="flex-wrap flex-valign-center flex-center"><strong class="text-6x text-energized">Acker</strong>
+      <div class="pad-v-xxs" style="min-width:250px"><img class="radius-half border border-royal border-5" src="/assets/images/face400.jpg" width="204" height="204"/></div><strong class="text-6x text-energized">Apple</strong>
+    </div>
+    <p class="pad-0 text-smx text-energized margin-top-0">I am a Software Engineer in South Florida</p>
+    <div class="flex-center flex-stacked">
+      <div class="text-xs opacity-70">I'd like to talk to you, tap play below</div>
+      <div class="width-full flex-1 animated rubberBand slower" [@fadeInOut]="1" style="max-width:280px">
+        <audio class="width-full" controls="controls">
+          <source src="assets/audio/AppIntro.mp3" type="audio/mpeg"/>Your device does not support audio elements.
+        </audio>
+      </div>
+    </div>
+  </div>
+</div>

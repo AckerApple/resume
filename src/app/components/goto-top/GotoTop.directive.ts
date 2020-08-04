@@ -6,28 +6,28 @@ import {
   PageScrollOptions,
   PageScrollService,
   PageScrollInstance
-} from "ngx-page-scroll-core";
+} from 'ngx-page-scroll-core';
 
 @Directive({
   selector: '[goto-top]'
 }) export class GotoTop {
   constructor(
-    public PageScrollService:PageScrollService
+    public PageScrollService: PageScrollService
   ){}
 
-  @HostListener("click")
+  @HostListener('click')
   onClick(){
-    this.top()
+    this.top();
   }
 
   top(){
-    //document.getElementById('top').scrollIntoView()
-    const options:PageScrollOptions = {
-      document:document,
-      scrollTarget:'#top',
-      duration:300
-    }
-    let pageScrollInstance: PageScrollInstance = new PageScrollInstance(options);
+    const options: PageScrollOptions = {
+      document,
+      scrollTarget: '#top',
+      duration: 300
+    };
+
+    const pageScrollInstance: PageScrollInstance = new PageScrollInstance(options);
     this.PageScrollService.start(pageScrollInstance);
   }
 }

@@ -1,0 +1,23 @@
+
+<fx-tracker #fx="FxTracker" [orderArray]="['welcome','purpose','family']" [activatedRoute]="fx.loaded &amp;&amp; activatedRoute.firstChild || activatedRoute"></fx-tracker>
+<route-reporter (routeChange)="makeNextLink()"></route-reporter>
+<table class="height-full width-full" cellPadding="0" cellSpacing="0" border="0" (swipeleft)="runSwipeLeft(fx)" (swiperight)="runSwipeRight(fx)">
+  <tbody>
+    <tr>
+      <td class="height-full pos-rel text-white" valign="top" [ngClass]="{'overflow-hidden pos-abs-kids height-full-router-wrap':fx.inFx}" [@slideInOutLeftKids]="{value:fx.id, params:{time:'250ms'}}" (@slideInOutLeftKids.start)="fx.inFx=true" (@slideInOutLeftKids.done)="fx.delayOutFx()">
+        <router-outlet #outlet="outlet"></router-outlet>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="text-center pad-smx"><a class="inline-block bg-stable pad-xs text-dark radius-5 pad-h-4x bolder" (click)="continueByTracker(fx)">CONTINUE&nbsp;&nbsp;<span class="fas fa-chevron-circle-right"></span></a></div>
+        <div class="text-white opacity-half">
+          <div class="child-pad-h-sm flex-valign-center flex-center"><a class="fa-circle no-a-style" routerLink="welcome" [ngClass]="activatedRoute.firstChild.routeConfig.path==='welcome' ? 'far' : 'fas'"></a><a class="fa-circle no-a-style" routerLink="purpose" [ngClass]="activatedRoute.firstChild.routeConfig.path==='purpose' ? 'far' : 'fas'"></a><a class="fa-circle no-a-style" routerLink="family" [ngClass]="activatedRoute.firstChild.routeConfig.path==='family' ? 'far' : 'fas'"></a>
+            <div class="pad-top-xxs"><a class="no-a-style fas fa-caret-right fa-lg" [routerLink]="nextLink"></a></div>
+          </div>
+          <div class="text-xxs text-center pad-top-xs"><strong>(swipe to navigate)</strong><br/><br/></div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

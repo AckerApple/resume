@@ -1,0 +1,83 @@
+<br/>
+<div class="flex-center">
+  <div class="width-full flex-1 height-60" style="max-width:280px">
+    <audio class="width-full" controls="controls">
+      <source src="assets/audio/LifePageAudio.mp3" type="audio/mpeg"/>Your device does not support audio elements.
+    </audio>
+  </div>
+</div><br/>
+<div class="pad-h text-center flex-evenly flex-wrap child-margin">
+  <div class="flex-1 pad border border-grey-4x radius-5 flex-stacked bg-white">
+    <div class="pad flex-1 flex-valign-center flex-center">
+      <div><i class="fas fa-male fa-4x text-calm"></i>&nbsp;<i class="fas fa-female fa-4x" style="color:#FF6666;"></i>&nbsp;<i class="fas fa-child fa-3x text-positive"></i>&nbsp;<i class="fas fa-child fa-3x text-positive"></i></div>
+    </div>
+    <div class="bg-grey-4x pad text-black radius-5"><strong>Family of Four</strong>
+      <div class="text-xs">Acker, Shelby, Jordi, and Ryker</div>
+    </div>
+  </div>
+  <div class="flex-1 pad border border-grey-4x radius-5 flex-stacked bg-white">
+    <div class="pad flex-1"><img class="width-full max-width-200" src="assets/images/florida.png"/></div>
+    <div class="bg-grey-4x pad text-black radius-5"><strong>Florida Grown</strong>
+      <div class="text-xs">
+        <div>27th state on March 3, 1845</div>
+      </div>
+    </div>
+  </div>
+  <div class="flex-1 pad border border-grey-4x radius-5 flex-stacked bg-white">
+    <div class="pad flex-1 flex-valign-center flex-center">
+      <div><i class="fas fa-baby fa-5x text-energized"></i></div>
+    </div>
+    <div class="bg-grey-4x pad text-black radius-5"><strong>Alive {{ aliveFor.years }} Years</strong>
+      <div class="text-xs"><strong>{{ aliveFor.months }}</strong>month{{ aliveFor.months | endNumberWord }}
+        &nbsp;<strong>{{ aliveFor.weeks }}</strong>week{{ aliveFor.weeks | endNumberWord }}
+        &nbsp;<strong>{{ aliveFor.days }}</strong>day{{ aliveFor.days | endNumberWord}}
+      </div>
+      <div class="text-xxs"><strong>{{ aliveFor.hours }}</strong>hour{{ aliveFor.hours | endNumberWord }}
+        &nbsp;<strong>{{ aliveFor.minutes }}</strong>min{{ aliveFor.minutes | endNumberWord }}.
+        &nbsp;<strong>{{ aliveFor.seconds }}</strong>sec{{ aliveFor.seconds | endNumberWord }}.
+      </div>
+    </div>
+  </div>
+  <div class="flex-1 pad border border-grey-4x radius-5 flex-stacked bg-white">
+    <div class="pad flex-1 flex-valign-center flex-center">
+      <div class="text-balanced"><i class="fas fa-birthday-cake fa-4x"></i></div>
+    </div>
+    <div class="bg-grey-4x pad text-black radius-5"><strong>Next Birthday {{ nextB | date : 'shortDate' }}</strong>
+      <div class="text-xs"><strong>{{ nextBday.months }}</strong>month{{ nextBday.months | endNumberWord }}
+        &nbsp;<strong>{{ nextBday.weeks }}</strong>week{{ nextBday.weeks | endNumberWord}}
+        &nbsp;<strong>{{ nextBday.days }}</strong>day{{ nextBday.days | endNumberWord}}
+      </div>
+      <div class="text-xxs"><strong>{{ nextBday.hours }}</strong>hour{{ nextBday.hours | endNumberWord}}
+        &nbsp;<strong>{{ nextBday.minutes }}</strong>min{{ nextBday.minutes | endNumberWord }}.
+        &nbsp;<strong>{{ nextBday.seconds }}</strong>sec{{ nextBday.seconds | endNumberWord }}.
+      </div>
+    </div>
+  </div>
+  <div class="flex-1 pad border border-grey-4x radius-5 flex-stacked bg-white">
+    <div class="pad flex-1 flex-valign-center flex-center">
+      <div><i class="fas fa-kiss-wink-heart fa-4x text-assertive"></i><i class="fas fa-kiss-wink-heart fa-4x fa-flip-horizontal text-assertive"></i></div>
+    </div>
+    <div class="bg-grey-4x pad text-black radius-5"><strong>Married {{ marriedFor.years }} Years</strong>
+      <div class="text-xs"><strong>{{ marriedFor.months }}</strong>month{{ marriedFor.months | endNumberWord }}
+        &nbsp;<strong>{{ marriedFor.weeks }}</strong>week{{ marriedFor.weeks | endNumberWord}}
+        &nbsp;<strong>{{ marriedFor.days }}</strong>day{{ marriedFor.days | endNumberWord}}
+      </div>
+      <div class="text-xxs"><strong>{{ marriedFor.hours }}</strong>hour{{ marriedFor.hours | endNumberWord}}
+        &nbsp;<strong>{{ marriedFor.minutes }}</strong>min{{ marriedFor.minutes | endNumberWord }}.
+        &nbsp;<strong>{{ marriedFor.seconds }}</strong>sec{{ marriedFor.seconds | endNumberWord }}.
+      </div>
+    </div>
+  </div>
+  <div class="flex-1 pad border border-grey-4x radius-5 flex-stacked bg-white">
+    <div class="pad flex-1 flex-valign-center flex-center">
+      <div><i class="fas fa-graduation-cap fa-4x text-royal"></i></div>
+    </div>
+    <div class="bg-grey-4x pad text-black radius-5"><strong>Graduated {{ graduated.years }} Years</strong>
+      <div class="text-xs"><strong>{{ graduated.months }}</strong>month{{ graduated.months | endNumberWord }}
+        &nbsp;<strong>{{ graduated.weeks }}</strong>week{{ graduated.weeks | endNumberWord}}
+        &nbsp;<strong>{{ graduated.days }}</strong>day{{ graduated.days | endNumberWord}} ago
+      </div>
+      <div class="text-xxs">from Coral Springs High</div>
+    </div>
+  </div>
+</div>

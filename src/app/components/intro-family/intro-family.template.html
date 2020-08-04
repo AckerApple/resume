@@ -1,0 +1,45 @@
+
+<ack-modal *ngIf="shows.showMoreInfo" (close)="shows.showMoreInfo=false" backgroundColor="rgba(3,3,3,.7)">
+  <div class="pad radius-5 max-width-500" style="border:1px rgba(3,3,3,.7) solid;background-color:#EEE">
+    <family-more-info></family-more-info>
+  </div>
+</ack-modal>
+<div class="flex-center">
+  <div class="text-center max-width-600 flex-1">
+    <h1 class="margin-top-0 text-assertive"><i class="fas fa-cloud-upload-alt"></i>&nbsp;Our Family,
+      &nbsp;<span class="nowrap">Our Cloud</span>
+    </h1>
+    <div class="flex-center flex-valign-center pad-h">
+      <div class="text-left">
+        <div class="flex child-pad-xs">
+          <div>
+            <div class="margin-top-xxs bg-assertive text-dark radius-half width-20 height-20 flex-valign-center flex-center">1</div>
+          </div>
+          <div class="text-justify">Are you in the family or a personal friend of Acker?</div>
+        </div>
+        <div class="flex child-pad-xs">
+          <div>
+            <div class="margin-top-xxs bg-assertive text-dark radius-half width-20 height-20 flex-valign-center flex-center">2</div>
+          </div>
+          <div class="text-justify">Would you like to share on our closed circuit platform?</div>
+        </div>
+        <div class="flex child-pad-xs">
+          <div>
+            <div class="margin-top-xxs bg-assertive text-dark radius-half width-20 height-20 flex-valign-center flex-center">3</div>
+          </div>
+          <div class="text-justify">Do you think you would appreciate a social platform void of distracting comments, likes, view counts?</div>
+        </div>
+        <div class="flex child-pad-xs">
+          <div>
+            <div class="margin-top-xxs bg-assertive text-dark radius-half width-20 height-20 flex-valign-center flex-center">4</div>
+          </div>
+          <div class="text-justify">You can read a lot more <a class="underline" (click)="shows.showMoreInfo=true">about it here</a></div>
+        </div>
+      </div>
+    </div><br/><a class="pad block bg-assertive text-white no-a-style" routerLink="/family"><strong>
+        Goto Family Login
+        &nbsp;<i class="fas fa-chevron-right"></i></strong></a><br/><a class="pad block bg-positive text-white no-a-style" routerLink="../../"><strong>
+        Continue
+        &nbsp;<i class="fas fa-chevron-right"></i></strong></a><br/>
+  </div>
+</div>

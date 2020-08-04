@@ -1,29 +1,30 @@
-.flex-1.text-center
-  h1.text-royal Hello & Welcome
-
-  .flex-center.flex-valign-center
-    .pos-rel
-      .pos-abs(
-        style = "bottom:0;right:-20px"
+.height-full.flex-valign-center
+  .flex-1.text-center
+    .flex-wrap.flex-center
+      .pad-h-2x.pad-top(
+        "[style.transform]" = "transformZ"
       )
-        .inline-block(
-          "[style.transform]" = "transformZ"
+        i.fas.fa-hand-paper.fa-4x.animate__animated.animate__tada.animate__slower
+      h1.text-royal.pad-bottom-0.margin-bottom-0
+        |Hello & Welcome
+
+    .pad-0.text-energized.margin-bottom-0 My name is
+    .flex-wrap.flex-valign-center.flex-center
+      strong.text-6x.text-energized Acker
+      .pad-v-xxs(style="min-width:250px")
+        img.radius-half.border.border-royal.border-5(
+          src="/assets/images/face400.jpg" width="204" height="204"
         )
-          i.fas.fa-hand-paper.fa-4x.animated.tada.slower
+      strong.text-6x.text-energized Apple
+    p.pad-0.text-smx.text-energized.margin-top-0
+      |I am a Software Engineer in South Florida
 
-      img.radius-half.border.border-royal.border-5(
-        src="/assets/images/face400.jpg" width="144" height="144"
+    .flex-center.flex-stacked
+      .text-xs.opacity-70 I'd like to talk to you, tap play below
+      .width-full.flex-1.animated.rubberBand.slower(
+        "[@fadeInOut]" = "1"
+        style="max-width:280px"
       )
-
-  .text-energized
-    p My name is Acker Apple
-    p.text-smx I am a Software Engineer in South Florida
-
-  .flex-center
-    .width-full.flex-1.animated.rubberBand.slower(
-      "[@fadeInOut]" = "1"
-      style="max-width:280px"
-    )
-      audio.width-full(controls)
-        source(src="assets/audio/AppIntro.mp3" type="audio/mpeg")
-        |Your device does not support audio elements.
+        audio.width-full(controls)
+          source(src="assets/audio/AppIntro.mp3" type="audio/mpeg")
+          |Your device does not support audio elements.

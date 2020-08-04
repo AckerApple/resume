@@ -9,6 +9,7 @@ ng-container(
   )
     |&nbsp;
 
+<div *ngIf="!AppData.loaded">Loading...</div>
 
 ack-app-stage.block.height-full.width-full(
   *ngIf = "AppData.loaded"
@@ -23,7 +24,7 @@ ack-app-stage.block.height-full.width-full(
     div(
       "[style.height.px]"="AppData.environment.platform==='ios' ? 20 : null"
     )
-  
+
   ng-template(#headerAppend="")
     ng-container(*ngFor="let directives of AppData.headerTemplates.directives")
       ng-container(*ngFor="let append of directives.appends")
@@ -31,7 +32,7 @@ ack-app-stage.block.height-full.width-full(
           ng-container(*ngTemplateOutlet="append")
 
 
-//-scroll to top
+//- scroll to top icon
 ng-container(
   "[(screenScrollModelY)]" = "screenScrollModelY"
 )

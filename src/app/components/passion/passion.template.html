@@ -1,0 +1,39 @@
+
+<div class="flex-center">
+  <div class="max-width-500 flex-1 pad">
+    <div class="flex-center">
+      <div class="width-full flex-1 pad-v-2x" style="max-width:280px">
+        <audio class="width-full" controls="controls">
+          <source src="assets/audio/Passions.mp3" type="audio/mpeg"/>Your device does not support audio elements.
+        </audio>
+      </div>
+    </div>
+    <h2 class="flex-valign-center"><i class="fas fa-female fa-lg" style="color:#FF6666;"></i>&nbsp;My Wife is a TEN</h2>
+    <p>On a scale of <strong>1-to-wife</strong>, here is how I rate my other passions</p><a class="block margin-v-lg" *ngFor="let item of passions">
+      <ng-container #showDetails="var" [var]="false"></ng-container>
+      <div class="radius-10" (click)="showDetails.var=!showDetails.var" [ngClass]="{'bg-warning text-black':showDetails.var}">
+        <div *ngIf="showDetails.var" [@fadeInOutUp]="1">
+          <div class="pos-rel">
+            <div class="pos-abs right-0"><i class="fas fa-times-circle opacity-half fa-lg"></i></div>
+          </div>
+          <div class="text-justify pad-2x text-sm" style="white-space:pre-wrap;">
+            <div class="pad-top-xs">{{ item.details }}</div>
+          </div>
+        </div>
+        <div class="flex">
+          <div class="pad-top-xs text-xs pad-right">1</div>
+          <div class="flex-1">
+            <div class="pos-rel">
+              <div class="pos-abs top-0 right-0 pad-right-xs"><i class="fas fa-info-circle opacity-half"></i></div>
+            </div>
+            <ack-meter-display>
+              <ack-meter [percent]="item.rating * 10" [meterClass]="item.colorClass">
+                <ng-template #meterLabel=""><strong>{{item.rating}}</strong></ng-template>{{item.title}}
+              </ack-meter>
+            </ack-meter-display>
+          </div>
+          <div class="pad-top-xs text-xs pad-left">wife</div>
+        </div>
+      </div></a>
+  </div>
+</div>

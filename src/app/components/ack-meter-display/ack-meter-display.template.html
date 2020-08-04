@@ -1,0 +1,18 @@
+
+<div class="flex">
+  <div class="flex-1">
+    <div class="width-full flex bg-grey radius-5">
+      <div *ngFor="let item of AckMeters;let first=first;let last=last" [style.width.%]="item.percent">
+        <div class="text-center" [ngClass]="item.meterClass" [class.radius-left-5]="first" [class.radius-right-5]="last" [style.height]="options?.height" [style.min-height.px]="5">
+          <ng-container *ngTemplateOutlet="item.meterLabel"></ng-container>
+        </div>
+      </div>
+      <div class="flex-1" [style.height]="options?.height" [style.min-height.px]="5"></div>
+    </div>
+  </div>
+</div>
+<div class="flex">
+  <div class="text-center" *ngFor="let item of AckMeters" [style.width.%]="item.percent">
+    <ng-container *ngTemplateOutlet="item.content"></ng-container>
+  </div>
+</div>

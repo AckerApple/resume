@@ -1,0 +1,11 @@
+
+<div class="pad">
+  <div class="margin-0 text-smx" [innerHtml]="changelog | safeHtml"></div>
+</div><br/>
+<div *ngIf="appSizeChart" [@fadeInOutUp]="1">
+  <div #ewm="ElementWidthModel" [(elementWidthModel)]="width"></div>
+  <div [style.display]="ewm.inChange ? 'none' : 'block'" [style.width.px]="width">
+    <iframe src="/stats.html" [attr.width]="width" [style.width.px]="width" height="800" frameBorder="0"></iframe>
+  </div>
+</div>
+<div class="flex pad"><a class="flex-1 pad-v radius-5 flex-valign-center" (click)="appSizeChart=!appSizeChart" [ngClass]="appSizeChart ? 'bg-energized' : 'bg-positive'"><i class="fas fa-chart-pie pad-h"></i><strong class="flex-1 text-center">app size chart</strong><i class="fas fa-chart-pie pad-h invisible"></i></a></div>

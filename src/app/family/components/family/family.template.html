@@ -1,0 +1,34 @@
+
+<header-templates>
+  <ng-template #append=""><img class="block width-40 height-40 radius-half" *ngIf="FamilyApp.user" [src]="FamilyApp.user.photoUrl" [title]="FamilyApp.user.email"/></ng-template>
+</header-templates>
+<ng-container *ngIf="FamilyApp.loaded">
+  <div class="height-full" *ngIf="!FamilyApp.user" [@fadeInUp]="1">
+    <family-login></family-login>
+  </div>
+  <div class="height-full width-full" *ngIf="FamilyApp.user" [@fadeInOutUp]="1">
+    <fx-tracker #fx="FxTracker"></fx-tracker>
+    <table class="width-full height-full" cellPadding="0" cellSpacing="0" border="0">
+      <tr>
+        <td class="height-full pos-rel text-white height-full-router-wrap" valign="top" [ngClass]="{'overflow-hidden pos-abs-kids':fx.inFx}" [@slideInOutLeftKids]="{value:fx.id,params:{time:'250ms'}}" (@slideInOutLeftKids.start)="fx.inFx=true" (@slideInOutLeftKids.done)="fx.delayOutFx()">
+          <router-outlet #outlet="outlet"></router-outlet>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="height-80"></div>
+        </td>
+      </tr>
+    </table>
+    <ack-fixed-element>
+      <div class="pos-fixed bottom-0 width-full flex-center flex-bottom" style="z-index:4">
+        <div class="text-white"></div>
+        <div class="height-60 overflow-hidden max-width-400 flex-1 text-white">
+          <div class="flex child-pad"><a class="no-a-style flex1 bg-grey text-center" routerLink="users"><i class="fas fa-users fa-2x"></i></a>
+            <ng-container *ngIf="FamilyApp.user"><a class="text-white flex1 text-center" [ngClass]="outlet.activatedRoute.routeConfig.path=='resume' ? 'strong bg-energized' : 'bg-balanced'" routerLink="resume"><i class="fas fa-user-graduate fa-2x"></i></a></ng-container><a class="text-white flex1 text-center" [ngClass]="outlet.activatedRoute.routeConfig.path=='' ? 'strong bg-energized' : 'bg-positive'" routerLink="./"><i class="fas fa-cloud fa-2x"></i></a><a class="flex1 bg-grey text-center bg-assertive" (click)="FamilyApp.logout()"><i class="fas fa-sign-out-alt fa-2x"></i></a>
+          </div>
+        </div>
+      </div>
+    </ack-fixed-element>
+  </div>
+</ng-container>

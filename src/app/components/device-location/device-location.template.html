@@ -1,0 +1,6 @@
+<a class="text-white bg-positive block pad-sm radius-5 text-center" (click)="getLocation()"><i class="fas fa-street-view fa-lg" *ngIf="!loadCount"></i><i class="fa fa-spinner fa-spin fa-lg" *ngIf="loadCount"></i></a>
+<div class="height-400" *ngIf="coords" [@fadeInOutUp]="1">
+  <agm-map class="height-full width-full block" [zoom]="12" [latitude]="coords.latitude" [longitude]="coords.longitude">
+    <agm-overlay [latitude]="coords.latitude" [longitude]="coords.longitude"><i class="fas fa-2x fa-map-pin text-assertive animated bounce slower"></i></agm-overlay>
+  </agm-map>
+</div>
