@@ -1,4 +1,5 @@
 {
-  "env":"production",
-  "platform" : "ios"
+  "env":"dev",
+  "mode" : "desktop",
+  "devicePlatform" : "desktop"
 }

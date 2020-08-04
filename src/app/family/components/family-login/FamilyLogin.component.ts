@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
-import { string } from "./family-login.template"
 import { animations } from "ack-angular-fx"
 import { FamilyApp } from '../../FamilyApp'
 import { AppData } from '../../../AppData'
 
 @Component({
   selector:'family-login',
-  template: string,
-  animations:animations
+  templateUrl: './family-login.template.html',
+  animations
 }) export class FamilyLogin {
   shows:{[index:string]:boolean} = {}
 

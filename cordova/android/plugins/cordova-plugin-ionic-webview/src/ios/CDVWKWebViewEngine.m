@@ -446,11 +446,11 @@ NSTimer *timer;
     // prevent webView from bouncing
     if (!bounceAllowed) {
         if ([wkWebView respondsToSelector:@selector(scrollView)]) {
-            ((UIScrollView*)[wkWebView scrollView]).bounces = NO;
+            ((UIScrollView*)[wkWebView scrollView]).animate__bounces = NO;
         } else {
             for (id subview in wkWebView.subviews) {
                 if ([[subview class] isSubclassOfClass:[UIScrollView class]]) {
-                    ((UIScrollView*)subview).bounces = NO;
+                    ((UIScrollView*)subview).animate__bounces = NO;
                 }
             }
         }

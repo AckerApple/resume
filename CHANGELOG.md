@@ -1,6 +1,11 @@
 ## CHANGE LOG
 - All notable changes to this project will be documented here.
 
+## [3.0.0] - 2020-08-04
+- Upgraded dependencies
+- Updated intro
+- Added flavors to sub pages
+
 ## [2.0.20] - 2019-05-25
 - Added NSLocationAlwaysUsageDescription
 - Added share button to photo capture demo
@@ -48,5 +53,5 @@
 
 ## [2.0.10] - 2019-05-19
 - Created changelog
-- Fixed Next Birthday 
+- Fixed Next Birthday
 - Added to LIFE page

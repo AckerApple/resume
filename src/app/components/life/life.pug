@@ -1,32 +1,27 @@
 br
 
-.flex-center
+.flex-evenly.flex-wrap.text-white
+  h2 Personal Highlights
   .width-full.flex-1.height-60(
     style="max-width:280px"
   )
+    .text-xs.opacity-half.text-center
+      |tap play to listen while reading
     audio.width-full(controls)
       source(src="assets/audio/LifePageAudio.mp3" type="audio/mpeg")
       |Your device does not support audio elements.
 br
-
 .pad-h.text-center.flex-evenly.flex-wrap.child-margin
-  .flex-1.pad.border.border-grey-4x.radius-5.flex-stacked.bg-white
-    .pad.flex-1.flex-valign-center.flex-center
-      div
-        i.fas.fa-male.fa-4x.text-calm
-        |&nbsp;
-        i.fas.fa-female.fa-4x(
-          style="color:#FF6666;"
-        )
-        |&nbsp;
-        i.fas.fa-child.fa-3x.text-positive
-        |&nbsp;
-        i.fas.fa-child.fa-3x.text-positive
-    .bg-grey-4x.pad.text-black.radius-5
-      strong Family of Four
-      .text-xs
-        |Acker, Shelby, Jordi, and Ryker
-  
+  ng-container(*ngTemplateOutlet="family")
+  ng-container(*ngTemplateOutlet="florida")
+  ng-container(*ngTemplateOutlet="movedSinceTemplate")
+  ng-container(*ngTemplateOutlet="alive")
+  ng-container(*ngTemplateOutlet="birthday")
+  ng-container(*ngTemplateOutlet="graduatedTemplate")
+  ng-container(*ngTemplateOutlet="codingSinceTemplate")
+  ng-container(*ngTemplateOutlet="married")
+
+ng-template(#florida="")
   .flex-1.pad.border.border-grey-4x.radius-5.flex-stacked.bg-white
     .pad.flex-1
       img.width-full.max-width-200(
@@ -36,7 +31,8 @@ br
       strong Florida Grown
       .text-xs
         div 27th state on March 3, 1845
-  
+
+ng-template(#alive="")
   .flex-1.pad.border.border-grey-4x.radius-5.flex-stacked.bg-white
     .pad.flex-1.flex-valign-center.flex-center
       div
@@ -59,16 +55,53 @@ br
         strong {{ aliveFor.minutes }}
         |min{{ aliveFor.minutes | endNumberWord }}.
         |&nbsp;
-        strong {{ aliveFor.seconds }}
+        strong {{ ('0' + aliveFor.seconds).slice(-2) }}
         |sec{{ aliveFor.seconds | endNumberWord }}.
-  
+
+ng-template(#codingSinceTemplate="")
+  .flex-1.pad.border.border-grey-4x.radius-5.flex-stacked.bg-white
+    .pad.flex-1.flex-valign-center.flex-center
+      div
+        i.fas.fa-code.fa-5x.text-energized
+    .bg-grey-4x.pad.text-black.radius-5
+      strong Coding for {{ codingFor.years }} Years
+      .text-xs
+        strong {{ codingFor.months }}
+        |month{{ codingFor.months | endNumberWord }}
+        |&nbsp;
+        strong {{ codingFor.weeks }}
+        |week{{ codingFor.weeks | endNumberWord }}
+        |&nbsp;
+        strong {{ codingFor.days }}
+        |day{{ codingFor.days | endNumberWord}}
+
+ng-template(#family="")
+  .flex-1.pad.border.border-grey-4x.radius-5.flex-stacked.bg-white
+    .pad.flex-1.flex-valign-center.flex-center
+      div
+        i.fas.fa-male.fa-4x.text-calm
+        |&nbsp;
+        i.fas.fa-female.fa-4x(
+          style="color:#FF6666;"
+        )
+        |&nbsp;
+        i.fas.fa-child.fa-3x.text-positive
+        |&nbsp;
+        i.fas.fa-child.fa-3x.text-positive
+    .bg-grey-4x.pad.text-black.radius-5
+      strong Family of Four
+      .text-xs
+        |Acker, Shelby, Jordi, and Ryker
+
+ng-template(#birthday="")
   .flex-1.pad.border.border-grey-4x.radius-5.flex-stacked.bg-white
     .pad.flex-1.flex-valign-center.flex-center
       .text-balanced
-        i.fas.fa-birthday-cake.fa-4x
+        i.fas.fa-birthday-cake.fa-5x
     .bg-grey-4x.pad.text-black.radius-5
       strong Next Birthday {{ nextB | date : 'shortDate' }}
       .text-xs
+        span is in&nbsp;
         strong {{ nextBday.months }}
         |month{{ nextBday.months | endNumberWord }}
         |&nbsp;
@@ -84,41 +117,16 @@ br
         strong {{ nextBday.minutes }}
         |min{{ nextBday.minutes | endNumberWord }}.
         |&nbsp;
-        strong {{ nextBday.seconds }}
+        strong {{ ('0' + nextBday.seconds).slice(-2) }}
         |sec{{ nextBday.seconds | endNumberWord }}.
-  
-  .flex-1.pad.border.border-grey-4x.radius-5.flex-stacked.bg-white
-    .pad.flex-1.flex-valign-center.flex-center
-      div
-        i.fas.fa-kiss-wink-heart.fa-4x.text-assertive
-        i.fas.fa-kiss-wink-heart.fa-4x.fa-flip-horizontal.text-assertive
-    .bg-grey-4x.pad.text-black.radius-5
-      strong Married {{ marriedFor.years }} Years
-      .text-xs
-        strong {{ marriedFor.months }}
-        |month{{ marriedFor.months | endNumberWord }}
-        |&nbsp;
-        strong {{ marriedFor.weeks }}
-        |week{{ marriedFor.weeks | endNumberWord}}
-        |&nbsp;
-        strong {{ marriedFor.days }}
-        |day{{ marriedFor.days | endNumberWord}}
-      .text-xxs
-        strong {{ marriedFor.hours }}
-        |hour{{ marriedFor.hours | endNumberWord}}
-        |&nbsp;
-        strong {{ marriedFor.minutes }}
-        |min{{ marriedFor.minutes | endNumberWord }}.
-        |&nbsp;
-        strong {{ marriedFor.seconds }}
-        |sec{{ marriedFor.seconds | endNumberWord }}.
 
+ng-template(#graduatedTemplate="")
   .flex-1.pad.border.border-grey-4x.radius-5.flex-stacked.bg-white
     .pad.flex-1.flex-valign-center.flex-center
       div
-        i.fas.fa-graduation-cap.fa-4x.text-royal
+        i.fas.fa-graduation-cap.fa-5x.text-royal
     .bg-grey-4x.pad.text-black.radius-5
-      strong Graduated {{ graduated.years }} Years
+      strong Graduated for {{ graduated.years }} Years
       .text-xs
         strong {{ graduated.months }}
         |month{{ graduated.months | endNumberWord }}
@@ -127,15 +135,74 @@ br
         |week{{ graduated.weeks | endNumberWord}}
         |&nbsp;
         strong {{ graduated.days }}
-        |day{{ graduated.days | endNumberWord}} ago
+        |day{{ graduated.days | endNumberWord}}
       .text-xxs
         |from Coral Springs High
-        //-
-          strong {{ graduated.hours }}
-          |hour{{ graduated.hours | endNumberWord}}
+
+ng-template(#movedSinceTemplate="")
+  .flex-1.pad.border.border-grey-4x.radius-5.flex-stacked.bg-white
+    .pad.flex-1.flex-valign-center.flex-center
+      div
+        i.fas.fa-house-user.fa-5x.text-positive
+    .bg-grey-4x.pad.text-black.radius-5
+      strong Lived in Coconut Creek FL for {{ graduated.years }} Years
+      .text-xs
+        strong {{ movedFor.months }}
+        |month{{ movedFor.months | endNumberWord }}
+        |&nbsp;
+        strong {{ movedFor.weeks }}
+        |week{{ movedFor.weeks | endNumberWord}}
+        |&nbsp;
+        strong {{ movedFor.days }}
+        |day{{ movedFor.days | endNumberWord}}
+
+ng-template(#married="")
+  .flex-1.pad.border.border-grey-4x.radius-5.flex-stacked.bg-white
+    .pad.flex-1.flex-valign-center.flex-center
+      div
+        i.fas.fa-kiss-wink-heart.fa-4x.text-assertive
+        i.fas.fa-kiss-wink-heart.fa-4x.fa-flip-horizontal.text-assertive
+    .bg-grey-4x.text-black.radius-5.flex-wrap.child-pad.flex-evenly
+      div
+        strong Married to Shelby for {{ marriedFor.years }} Years
+        div
+          span.text-xs
+            strong {{ marriedFor.months }}
+            |month{{ marriedFor.months | endNumberWord }}
+            |&nbsp;
+            strong {{ marriedFor.weeks }}
+            |week{{ marriedFor.weeks | endNumberWord}}
+            |&nbsp;
+            strong {{ marriedFor.days }}
+            |day{{ marriedFor.days | endNumberWord}}
+            |&nbsp;
+          span.text-xxs
+            strong {{ marriedFor.hours }}
+            |hour{{ marriedFor.hours | endNumberWord}}
+            |&nbsp;
+            strong {{ marriedFor.minutes }}
+            |min{{ marriedFor.minutes | endNumberWord }}.
+            |&nbsp;
+            strong {{ ('0' + marriedFor.seconds).slice(-2) }}
+            |sec{{ marriedFor.seconds | endNumberWord }}.
+      div
+        div.strong Dating {{ datingFor.years }} Years
+        span.text-xs
+          strong {{ datingFor.months }}
+          |month{{ datingFor.months | endNumberWord }}
           |&nbsp;
-          strong {{ graduated.minutes }}
-          |min{{ graduated.minutes | endNumberWord }}.
+          strong {{ datingFor.weeks }}
+          |week{{ datingFor.weeks | endNumberWord}}
           |&nbsp;
-          strong {{ graduated.seconds }}
-          |sec{{ graduated.seconds | endNumberWord }}.
+          strong {{ datingFor.days }}
+          |day{{ datingFor.days | endNumberWord}}
+          |&nbsp;
+        span.text-xxs
+          strong {{ datingFor.hours }}
+          |hour{{ datingFor.hours | endNumberWord}}
+          |&nbsp;
+          strong {{ datingFor.minutes }}
+          |min{{ datingFor.minutes | endNumberWord }}.
+          |&nbsp;
+          strong {{ ('0' + datingFor.seconds).slice(-2) }}
+          |sec{{ datingFor.seconds | endNumberWord }}.

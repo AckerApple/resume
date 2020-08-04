@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { string } from "./welcome.template"
 import { animations } from "ack-angular-fx"
 
 @Component({
-  template: string,
-  animations:animations
+  templateUrl: './welcome.template.html',
+  animations
 }) export class Welcome {
   transformZ:string = 'rotate(20deg)'
   gyroWatcher:any
@@ -63,12 +62,12 @@ import { animations } from "ack-angular-fx"
       setTimeout(()=>this.resetNumbers(), 600)
     }
 
-    if( portrait ){      
+    if( portrait ){
       this.boxValues.transformZ = 'rotate('+aAdj+'deg)'
     }else{
       this.boxValues.transformZ = 'perspective(50px) rotateY('+(-aAdj)+'deg)'
     }
-    
+
     this.boxValues.portrait = portrait
   }
 }

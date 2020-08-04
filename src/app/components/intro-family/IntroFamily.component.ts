@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { string } from "./intro-family.template"
 import { animations } from "ack-angular-fx"
 
 @Component({
-  template: string,
-  animations:animations
+  templateUrl: './intro-family.template.html',
+  animations
 }) export class IntroFamily {
-  shows:{[index:string]:boolean} = {}
+  shows: { [index: string]: boolean } = {}
 }

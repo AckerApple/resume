@@ -1,22 +1,6 @@
 .flex-center.height-full.flex-valign-center
   .text-white.width-full.max-width-400
-    br
-    br
-    .flex-center.width-full.overflow-hidden
-      .max-width-500.flex-1.animated.rubberBand.slower.delay-2s(
-        style="height:60px"
-      )
-        .flex-center
-          .width-full.flex-1(
-            *ngIf="delay2"
-            "[@fadeInOut]" = "1"
-            style="max-width:280px"
-          )
-            audio.width-full(controls)
-              source(src="assets/audio/AppIntro.mp3" type="audio/mpeg")
-              |Your device does not support audio elements.
-
-    h1.margin-0(
+    h1(
       "(click)" = "AppData.debugTap()"
     )
       //-.inline-block.invisible
@@ -24,17 +8,18 @@
       .inline-block(
         "[@fadeInOut]" = "{value:1,params:{time:'1s'}}"
       )
-        .animated.bounce.flex-valign-center
+        .animate__animated.animate__bounce.flex-valign-center
           span &nbsp;
           //-i.fas.fa-apple-alt
           img.radius-half(
-            src="/assets/images/profile-72@2x.png" width="40" height="40"
+            src="/assets/images/profile-72@2x.png"
+            width="40" height="40"
           )
           strong &nbsp;Acker Apple
 
-    .child-pad-v.text-center.animated.fast.swing.delay-300ms
-      .animated(
-        "[class.pulse]" = "mouseover===0"
+    .child-pad-v.text-center.animate__animated.animate__fast.animate__swing.animate__delay-300ms
+      .animate__animated(
+        "[class.animate__pulse]" = "mouseover===0"
         "(mouseover)" = "mouseover=0"
         "(mouseout)" = "mouseover=null"
       )
@@ -49,8 +34,8 @@
           i.fas.fa-chevron-right
 
 
-      .animated(
-        "[class.pulse]" = "mouseover===1"
+      .animate__animated(
+        "[class.animate__pulse]" = "mouseover===1"
         "(mouseover)"="mouseover=1"
         "(mouseout)"="mouseover=null"
       )
@@ -64,8 +49,8 @@
           strong.flex-1 CAREER
           i.fas.fa-chevron-right
 
-      .animated(
-        "[class.pulse]" = "mouseover===2"
+      .animate__animated(
+        "[class.animate__pulse]" = "mouseover===2"
         "(mouseover)"="mouseover=2"
         "(mouseout)"="mouseover=null"
       )
@@ -79,8 +64,8 @@
           strong.flex-1 PASSION
           i.fas.fa-chevron-right
 
-      .animated(
-        "[class.pulse]" = "mouseover===3"
+      .animate__animated(
+        "[class.animate__pulse]" = "mouseover===3"
         "(mouseover)"="mouseover=3"
         "(mouseout)"="mouseover=null"
       )
@@ -121,7 +106,7 @@
           )
             strong share
 
-        //-.animated.rubberBand.delay-3s.slower
+        //-.animate__animated.animate__rubberBand.animate__delay-3s.animate__slower
 
         ack-modal(
           *ngIf="confirmIntro"
@@ -143,6 +128,24 @@
             "(click)" = "confirmIntro=true"
           )
             strong intro
+
+    br
+    br
+    .flex-center.width-full.overflow-hidden
+      .max-width-500.flex-1.animate__animated.animate__rubberBand.animate__slower.animate__delay-300ms(
+        style="height:60px"
+      )
+        .flex-center
+          .width-full.flex-1(
+            *ngIf="delay2"
+            "[@fadeInOut]" = "1"
+            style="max-width:280px"
+          )
+            audio.width-full(controls)
+              source(
+                src="assets/audio/AppIntro.mp3" type="audio/mpeg"
+              )
+              |Your device does not support audio elements.
 
     .flex-center.pad-top
       strong.text-xs.opacity-half

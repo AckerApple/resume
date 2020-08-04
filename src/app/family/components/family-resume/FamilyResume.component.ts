@@ -1,14 +1,13 @@
 import { Observable } from 'rxjs/internal/Observable'
 import { Component } from '@angular/core';
-import { string } from "./family-resume.template"
 import { animations } from "ack-angular-fx"
 import { FamilyApp } from '../../FamilyApp'
 import { photo } from '../../../types'
 
 
 @Component({
-  template: string,
-  animations:animations
+  templateUrl: './family-resume.template.html',
+  animations
 }) export class FamilyResume {
   photos$:Observable<photo[]>
 

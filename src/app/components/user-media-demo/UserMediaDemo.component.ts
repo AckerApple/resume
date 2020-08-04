@@ -1,9 +1,8 @@
 import {
   ViewChild, TemplateRef, ElementRef,
-  Component } from '@angular/core'
-import { string } from './user-media-demo.template'
-import { animations } from 'ack-angular-fx'
-import { WebCamComponent } from 'ack-angular-webcam'
+  Component } from '@angular/core';
+import { animations } from 'ack-angular-fx';
+import { WebCamComponent } from 'ack-angular-webcam';
 
 //declare var window:any
 //declare var cordova:any
@@ -11,8 +10,8 @@ declare var navigator:any
 
 @Component({
   selector: "user-media-demo",
-  animations:animations,
-  template: string
+  animations,
+  templateUrl: './user-media-demo.template.html'
 }) export class UserMediaDemo {
   @ViewChild( WebCamComponent, { static: false } ) webcam:TemplateRef<ElementRef>
   //webcam:any

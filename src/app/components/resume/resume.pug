@@ -39,7 +39,7 @@
 
       strong.flex1.text-2x
         a.nowrap.flex-valign-center.no-a-style.pad-h-2x.pad-v-xs.bg-balanced.text-white.text-center.hover-text-white(
-          href = "pdfUrl"
+          [href] = "pdfUrl"
           target = "_blank"
           "[share-button]" = "{files:[AppData.wwwBasePath+'/assets/Acker Apple Resume.pdf'], subject:'Software Engineer Acker Apple', message:'Really good looking resume to be reviewed.\n\n'}"
         )

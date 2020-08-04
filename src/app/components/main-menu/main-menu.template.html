@@ -1,36 +1,25 @@
 
 <div class="flex-center height-full flex-valign-center">
-  <div class="text-white width-full max-width-400"><br/><br/>
-    <div class="flex-center width-full overflow-hidden">
-      <div class="max-width-500 flex-1 animated rubberBand slower delay-2s" style="height:60px">
-        <div class="flex-center">
-          <div class="width-full flex-1" *ngIf="delay2" [@fadeInOut]="1" style="max-width:280px">
-            <audio class="width-full" controls="controls">
-              <source src="assets/audio/AppIntro.mp3" type="audio/mpeg"/>Your device does not support audio elements.
-            </audio>
-          </div>
-        </div>
-      </div>
-    </div>
-    <h1 class="margin-0" (click)="AppData.debugTap()">
+  <div class="text-white width-full max-width-400">
+    <h1 (click)="AppData.debugTap()">
       <div class="inline-block" [@fadeInOut]="{value:1,params:{time:'1s'}}">
-        <div class="animated bounce flex-valign-center"><span>&nbsp;</span><img class="radius-half" src="/assets/images/profile-72@2x.png" width="40" height="40"/><strong>&nbsp;Acker Apple</strong></div>
+        <div class="animate__animated animate__bounce flex-valign-center"><span>&nbsp;</span><img class="radius-half" src="/assets/images/profile-72@2x.png" width="40" height="40"/><strong>&nbsp;Acker Apple</strong></div>
       </div>
     </h1>
-    <div class="child-pad-v text-center animated fast swing delay-300ms">
-      <div class="animated" [class.pulse]="mouseover===0" (mouseover)="mouseover=0" (mouseout)="mouseover=null"><a class="no-a-style bg-calm pad flex-valign-center" routerLink="/life">
+    <div class="child-pad-v text-center animate__animated animate__fast animate__swing animate__delay-300ms">
+      <div class="animate__animated" [class.animate__pulse]="mouseover===0" (mouseover)="mouseover=0" (mouseout)="mouseover=null"><a class="no-a-style bg-calm pad flex-valign-center" routerLink="/life">
           <div class="pos-rel opacity-90">
             <div class="pos-abs" style="top:-5px"><i class="fa-2x fas fa-hand-spock"></i></div>&nbsp;
           </div><strong class="flex-1">LIFE</strong><i class="fas fa-chevron-right"></i></a></div>
-      <div class="animated" [class.pulse]="mouseover===1" (mouseover)="mouseover=1" (mouseout)="mouseover=null"><a class="no-a-style bg-energized pad flex-valign-center" routerLink="/career">
+      <div class="animate__animated" [class.animate__pulse]="mouseover===1" (mouseover)="mouseover=1" (mouseout)="mouseover=null"><a class="no-a-style bg-energized pad flex-valign-center" routerLink="/career">
           <div class="pos-rel opacity-90">
             <div class="pos-abs" style="top:-5px"><i class="fa-2x fas fa-rocket"></i></div>&nbsp;
           </div><strong class="flex-1">CAREER</strong><i class="fas fa-chevron-right"></i></a></div>
-      <div class="animated" [class.pulse]="mouseover===2" (mouseover)="mouseover=2" (mouseout)="mouseover=null"><a class="no-a-style bg-royal pad flex-valign-center" routerLink="/passion">
+      <div class="animate__animated" [class.animate__pulse]="mouseover===2" (mouseover)="mouseover=2" (mouseout)="mouseover=null"><a class="no-a-style bg-royal pad flex-valign-center" routerLink="/passion">
           <div class="pos-rel opacity-90">
             <div class="pos-abs" style="top:-5px"><i class="fa-2x fas fa-heart"></i></div>&nbsp;
           </div><strong class="flex-1">PASSION</strong><i class="fas fa-chevron-right"></i></a></div>
-      <div class="animated" [class.pulse]="mouseover===3" (mouseover)="mouseover=3" (mouseout)="mouseover=null"><a class="no-a-style bg-assertive pad flex-valign-center" routerLink="/family">
+      <div class="animate__animated" [class.animate__pulse]="mouseover===3" (mouseover)="mouseover=3" (mouseout)="mouseover=null"><a class="no-a-style bg-assertive pad flex-valign-center" routerLink="/family">
           <div class="pos-rel opacity-90">
             <div class="pos-abs" style="top:-5px"><i class="fa-2x fas fa-users"></i></div>&nbsp;
           </div><strong class="flex-1">FAMILY LOGIN</strong><i class="fas fa-chevron-right"></i></a></div>
@@ -49,6 +38,17 @@
           </div>
         </ack-modal>
         <div class="flex1 text-center"><a class="text-xs" (click)="confirmIntro=true"><strong>intro</strong></a></div>
+      </div>
+    </div><br/><br/>
+    <div class="flex-center width-full overflow-hidden">
+      <div class="max-width-500 flex-1 animate__animated animate__rubberBand animate__slower animate__delay-300ms" style="height:60px">
+        <div class="flex-center">
+          <div class="width-full flex-1" *ngIf="delay2" [@fadeInOut]="1" style="max-width:280px">
+            <audio class="width-full" controls="controls">
+              <source src="assets/audio/AppIntro.mp3" type="audio/mpeg"/>Your device does not support audio elements.
+            </audio>
+          </div>
+        </div>
       </div>
     </div>
     <div class="flex-center pad-top"><strong class="text-xs opacity-half">v{{ version }}</strong></div>

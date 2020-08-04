@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { string } from "./coming-soon.template"
 
 @Component({
-  template: string
+  templateUrl: './coming-soon.template.html'
 }) export class ComingSoon {
 }
