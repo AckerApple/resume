@@ -1,13 +1,12 @@
 import {
   Component
 } from '@angular/core';
-import { string } from './family.template'
 import { animations } from 'ack-angular-fx'
 import { AppData } from '../../../AppData'
 import { FamilyApp } from '../../FamilyApp'
 
 @Component({
-  template: string,
+  templateUrl: './family.template.html',
   animations,
   providers: [FamilyApp]
 }) export class Family {

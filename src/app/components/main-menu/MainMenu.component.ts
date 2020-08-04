@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
-import { string } from "./main-menu.template"
 import { animations } from "ack-angular-fx"
 import { AppData } from "../../AppData"
 import { version } from '../../../../package.json'
 
 @Component({
-  template: string,
-  animations:animations
+  templateUrl: "./main-menu.template.html",
+  animations
 })
 export class MainMenu {
   confirmIntro:boolean

@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { string } from "./resume.template"
 import { animations } from "ack-angular-fx"
 import { AppData } from "../../AppData"
 
 @Component({
-  template: string,
+  templateUrl: "./resume.template.html",
   animations:animations
 })
 export class Resume {

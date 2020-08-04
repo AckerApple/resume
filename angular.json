@@ -133,5 +133,8 @@
       }
     }
   },
-  "defaultProject": "resume-app"
+  "defaultProject": "resume-app",
+  "cli": {
+    "analytics": "42210690-846d-47d9-ac8c-cf28632bc3f1"
+  }
 }

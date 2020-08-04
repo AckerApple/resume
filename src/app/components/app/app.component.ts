@@ -4,13 +4,12 @@ import {
   NavigationEnd,
   Router, ActivatedRoute
 } from '@angular/router'
-import { string } from "./app.template"
 import { animations } from "ack-angular-fx"
 import { AppData } from "../../AppData"
 
 @Component({
   selector: 'app-root',
-  template: string,
+  templateUrl: "./app.template.html",
   animations
 })
 export class AppComponent {
