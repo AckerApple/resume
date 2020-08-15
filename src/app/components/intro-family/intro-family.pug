@@ -15,7 +15,7 @@ ack-modal(
       |&nbsp;Our Family,
       |&nbsp;
       span.nowrap Our Cloud
-      
+
     .flex-center.flex-valign-center.pad-h
       .text-left
         .flex.child-pad-xs
@@ -46,19 +46,20 @@ ack-modal(
           .text-justify
             |You can read a lot more #[a.underline("(click)"="shows.showMoreInfo=true") about it here]
     br
-    a.pad.block.bg-assertive.text-white.no-a-style(
-      routerLink = "/family"
-    )
-      strong
-        |Goto Family Login
-        |&nbsp;
-        i.fas.fa-chevron-right
-    br
-    a.pad.block.bg-positive.text-white.no-a-style(
-      routerLink = "../../"
-    )
-      strong
-        |Continue
-        |&nbsp;
-        i.fas.fa-chevron-right
+    .flex-wrap.child-pad.child-margin-1.flex-wrap
+      a.flex1.block.bg-assertive.text-white.no-a-style(
+        routerLink = "/family"
+      )
+        strong
+          |Goto Family Login
+          |&nbsp;
+          i.fas.fa-chevron-right
+      br
+      a.flex1.block.bg-positive.text-white.no-a-style(
+        routerLink = "../../"
+      )
+        strong
+          |Skip
+          |&nbsp;
+          i.fas.fa-chevron-right
     br
