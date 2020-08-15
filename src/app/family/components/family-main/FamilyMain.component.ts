@@ -6,7 +6,7 @@ import { FamilyApp } from '../../FamilyApp'
 
 
 @Component({
-  template: './family-main.template.html',
+  templateUrl: './family-main.template.html',
   animations
 }) export class FamilyMain {
   photos$: Observable<any[]>
